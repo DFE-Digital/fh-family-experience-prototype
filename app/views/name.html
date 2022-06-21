@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Heading or question goes here</h1>
+
+      <form class="form" action="dob" method="post">
+
+        {{ govukInput({
+          id: "name",
+          name: "name",
+          value: data['name'],
+          classes: '',
+          label: {
+            html: 'What is your  full name?',
+            classes: 'govuk-label--l'
+          }
+        }) }}
+          
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
