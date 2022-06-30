@@ -4,20 +4,55 @@
 
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        My Prototypppy
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-    
-      <p>
-        <a href="name">Start prototypee</a>
-      </p>
 
-     
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Prototype, Sprint 4, June - July 2022</p>
+
+      <!-- <ul class="govuk-list govuk-list--bullet">
+        <li>do something</li>
+        <li>update your name, address or other details</li>
+        <li>do something else</li>
+      </ul> -->
+
+
+      <a href="sprint-4/home" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">User research</h2>
+      <p>FX UR Alpha ANALYSIS Board <a target="_blank" href="https://lucid.app/lucidspark/2d8326ba-fed7-473d-9089-3776522aa375/edit#">here</a></p>
+    
+
+      <h2 class="govuk-heading-m">Service design</h2>
+      <p>Family Hubs end to end process <a target="_blank" href="https://lucid.app/lucidspark/53b218a7-1059-4b2e-979b-eb653d137564/edit?view_items=SShuJaPEEEvt&invitationId=inv_59d70885-9e5f-475a-943f-a0a36471e44a">here</a></p>
+    
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Credentials
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <p class="app-related__list-item-description">
+            Username: <code>family</code><br>
+            Password: <code>experience</code><br>
+          </p>
+        </nav>
+      </aside>
+
     </div>
   </div>
-
 {% endblock %}
+
