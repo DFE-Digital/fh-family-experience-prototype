@@ -1,9 +1,17 @@
 
 {% extends "layout.html" %}
 
+
 {% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
+
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -17,5 +25,18 @@
 
     </div>
   </div>
+
+
+  <div class="full-BGstrip" style="background-color:#F2F2F2;">
+    <div class="govuk-width-container">
+      <h1 class="govuk-heading-l">Find support for families, children or young people</h1>
+
+      <p>some text</p>
+    </div>
+  </div>
+  
 {% endblock %}
+
+
+
 
