@@ -1,5 +1,7 @@
 
 {% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
 
 
 {% block beforeContent %}
@@ -17,8 +19,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Family Hubs support families, children and young people by bringing together local services all in one place
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Family hubs support families, children and young people by bringing together local services all in one place
       </h1>
 
       <p>All families in England can get services, support and advice, from pregnancy through to young adulthood, from a local family hub.</p>      
@@ -27,15 +29,96 @@
   </div>
 
 
-  <div class="full-BGstrip" style="background-color:#F2F2F2;">
+  <div class="full-BGstrip govuk-!-margin-top-4">
     <div class="govuk-width-container">
       <h1 class="govuk-heading-l">Find support for families, children or young people</h1>
 
-      <p>some text</p>
+      <form>
+        <div class="app-search-form-inner">
+            <div>
+              {{ govukInput({
+                label: {
+                  text: "Search term",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "event-name",
+                name: "event-name"
+              }) }}
+            </div>
+
+            <div>
+            {{ govukInput({
+              label: {
+                text: "Enter your town, county or postcode",
+                classes: "govuk-label--s",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-20",
+              id: "event-name",
+              name: "event-name",
+              value: ""
+            }) }}
+          </div>
+
+          {{ govukButton({
+            text: "Search"
+          }) }}
+
+        </div>
+      </form>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Popular searches:</h3>
+      <div class="search__popular">
+        <a class="govuk-link" href="#">Toddler groups</a>
+        <a class="govuk-link" href="#">Breastfeeding</a>
+        <a class="govuk-link" href="#">Healthy eating</a>
+        <a class="govuk-link" href="#">Single parents</a>
+        <a class="govuk-link" href="#">Babies</a>
+        <a class="govuk-link" href="#">Teenagers</a>
+      </div>
+      
     </div>
   </div>
+
+
+  <div class="govuk-!-margin-top-4 govuk-!-padding-top-4 govuk-!-padding-bottom-top-4 govuk-!-padding-left-4 govuk-!-padding-right-4">
+    <div class="govuk-width-container">
+      <h1 class="govuk-heading-l">Find your nearest family hub or children’s centre</h1>
+
+      <form>
+        <div class="app-search-form-inner">
+           
+          <div>
+            {{ govukInput({
+              label: {
+                text: "Enter your town, county or postcode",
+                classes: "govuk-label--s",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-20",
+              id: "event-name",
+              name: "event-name",
+              value: ""
+            }) }}
+          </div>
+
+          {{ govukButton({
+            text: "Search"
+          }) }}
+
+        </div>
+      </form>
+      
+    </div>
+  </div>
+
+  
   
 {% endblock %}
+
+
 
 
 

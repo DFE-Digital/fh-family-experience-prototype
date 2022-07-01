@@ -20,6 +20,27 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-.grey {
-  background-color: #f8f8f8;
+.custom-main {
+  padding-top: 20px;
+}
+
+.full-BGstrip {
+  padding: 40px 30px 40px 30px;
+  background-color:#F2F2F2;
+}
+
+.app-search-form-inner {
+  display: flex;
+  align-items: end;
+}
+
+.app-search-form-inner > div {
+  padding-right: 15px;
+  width: 36%;
+}
+
+
+.search__popular .govuk-link {
+  color: #0B0C0C;
+  margin-right: 10px;
 }
