@@ -39,6 +39,10 @@ $govuk-assets-path: '/govuk/assets/';
   width: 35%;
 }
 
+#main-content > div.full-BGstrip.govuk-\!-margin-top-4 > div > form > div > button {
+  margin-bottom: 23px;
+}
+
 .search__form .input-width {
   width: 20%;
 }
