@@ -1,0 +1,143 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Get support from Devon family hubs
+      </h1>
+
+      <p>Welcome to Devon family hubs. We have 21 family hubs and children’s centres spread all across the county, and also offer some services online. 
+        Our services work together to promote the health, development and well-being of all children, young people and families in Devon.
+      </p> 
+      <p>
+        We are here to help you, whether you’re expecting a baby, or you’re the parent or carer of a child or young person up to 
+        age 19 (or 25 if they have special educational needs and disabilities).
+      </p>     
+
+    </div>
+  </div>
+
+
+  
+    <div class="govuk-width-container govuk-!-margin-top-6">
+
+      <form action="" method="post">
+        <div class="search__form">
+           
+          <div>
+            {{ govukInput({
+              label: {
+                text: "What would you like support with?",
+                classes: "govuk-label--s",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-20",
+              id: "event-name",
+              name: "event-name",
+              value: ""
+            }) }}
+          </div>
+
+          <div class="input-width">
+            {{ govukInput({
+              label: {
+                text: "Postcode",
+                classes: "govuk-label--s",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-20",
+              id: "event-name",
+              name: "event-name",
+              value: ""
+            }) }}
+          </div>
+
+          <div>
+            {{ govukSelect({
+              id: "search-radius",
+              name: "search-radius",
+              label: {
+                text: "Search radius"
+              },
+              items: [
+                {
+                  value: "five-miles",
+                  text: "5 miles"
+                },
+                {
+                  value: "ten-miles",
+                  text: "10 miles",
+                  selected: true
+                },
+                {
+                  value: "fifteen-miles",
+                  text: "15 miles"
+                }
+              ]
+            }) }}
+          </div>
+
+
+        </div>
+
+        {{ govukButton({
+          text: "Search"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+          <ul class="moj-sub-navigation__list">
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" aria-current="page" href="#1">Nav item 1</a>
+            </li>
+        
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" href="#2">Nav item 2</a>
+            </li>
+        
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" href="#3">Nav item 3</a>
+            </li>
+          </ul>
+        
+        </nav>
+        
+      </div>
+    </div>
+
+  
+
+
+  
+  
+{% endblock %}
+
+
+
+
+
+

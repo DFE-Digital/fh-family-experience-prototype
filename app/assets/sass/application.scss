@@ -39,6 +39,19 @@ $govuk-assets-path: '/govuk/assets/';
   width: 35%;
 }
 
+.search__form .input-width {
+  width: 20%;
+}
+
+.search__form #search-radius {
+  width: 60%;
+}
+
+.search__form .govuk-form-group {
+  margin-bottom: 20px;
+}
+
+
 .search__form .govuk-form-group {
   align-self: flex-end;
 
