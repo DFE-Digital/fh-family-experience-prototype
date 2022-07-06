@@ -40,7 +40,7 @@
                     Search term
                   </label>
                   
-                  <select class="govuk-select" id="search-term" name="search-term" value="{{ data['search-term'] }}">
+                  <select class="govuk-select" id="search-term" name="search-term">
                     <option value="sleep" selected></option>
                     <option value="Causes of Sleep disorder">Causes of Sleep disorder</option>
                     <option value="Children Sleep Disorder">Children Sleep Disorders</option>
@@ -58,7 +58,7 @@
                     classes: "govuk-input--width-20",
                     id: "postcode",
                     name: "postcode",
-                    value: data['postcode']
+                    value: ""
                   }) }}
                 </div>
 
@@ -142,6 +142,11 @@
     </div>   
   </div>
 
+  <div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-one-third govuk-!-padding-left-6 govuk-!-padding-right-6">
+      <a href="#" class="govuk-link govuk-body">Show all topics</a>
+    </div>   
+  </div>
 
   
   

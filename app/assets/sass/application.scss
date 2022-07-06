@@ -82,3 +82,7 @@ $govuk-assets-path: '/govuk/assets/';
 .autocomplete__wrapper * {
   @include govuk-typography-common();
 }
+
+.moj-sub-navigation {
+  margin-bottom: 20px;
+}
