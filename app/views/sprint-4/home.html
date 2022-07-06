@@ -40,11 +40,11 @@
                     Search term
                   </label>
                   
-                  <select class="govuk-select" id="search-term" name="search-term">
+                  <select class="govuk-select" id="search-term" name="search-term" value="{{ data['search-term'] }}">
                     <option value="sleep" selected></option>
-                    <option value="sleep">Causes of Sleep disorder</option>
-                    <option value="sleep">Children Sleep Disorders</option>
-                    <option value="sleep">Sleep problems in young children</option>
+                    <option value="Causes of Sleep disorder">Causes of Sleep disorder</option>
+                    <option value="Children Sleep Disorder">Children Sleep Disorders</option>
+                    <option value="Sleep problems in young children">Sleep problems in young children</option>
                   </select>
                 </div>
 
@@ -56,14 +56,14 @@
                       isPageHeading: false
                     },
                     classes: "govuk-input--width-20",
-                    id: "event-name",
-                    name: "event-name",
-                    value: ""
+                    id: "postcode",
+                    name: "postcode",
+                    value: data['postcode']
                   }) }}
                 </div>
 
               {{ govukButton({
-                text: "Search"
+                html: "Search"
               }) }}
 
             </div>  <!-- end of app-search-form-inner -->

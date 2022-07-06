@@ -44,14 +44,14 @@
           <div>
             {{ govukInput({
               label: {
-                text: "What would you like support with?",
+                text: "Search term",
                 classes: "govuk-label--s",
                 isPageHeading: false
               },
               classes: "govuk-input--width-20",
               id: "event-name",
               name: "event-name",
-              value: ""
+              value: data['search-term']
             }) }}
           </div>
 
@@ -65,7 +65,7 @@
               classes: "govuk-input--width-20",
               id: "event-name",
               name: "event-name",
-              value: ""
+              value: data['postcode']
             }) }}
           </div>
 
