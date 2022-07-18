@@ -21,11 +21,11 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .custom-main {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .full-BGstrip {
-  padding: 40px 30px 40px 30px;
+  padding: 40px 30px 20px 30px;
   background-color:#F2F2F2;
 }
 
@@ -97,5 +97,161 @@ body > header > div > div.govuk-header__content {
   align-content: center;
   justify-content: space-around;
   align-items: baseline;
+}
+
+// three boxes on home page
+
+
+.govuk-card {
+  height: 230px;
+  border: 1px solid #B1B4B6;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-card {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+.govuk-card--selectable {
+  position: relative;
+}
+
+.govuk-card__content {
+  padding-bottom: 0;
+  padding-top: 15px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-card__content {
+    padding-top: 20px;
+  }
+}
+
+
+.govuk-o-grid::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+// .govuk-card--selectable>a {
+//   height: 100%;
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   z-index: 0;
+// }
+
+.govuk-card__content p {
+  margin-bottom: 0;
+}
+
+// .govuk-card--selectable:hover {
+//   background-color: #005ea5;
+// }
+
+.govuk-card--contained .govuk-card__content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-card--contained .govuk-card__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+a:link:focus {
+  color: #005798;
+}
+
+.govuk-\!-mb-r3 {
+  margin-bottom: 15px !important;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-\!-mb-r3 {
+    margin-bottom: 15px !important;
+  }
+}
+
+.govuk-card--selectable>a:focus {
+  background-color: initial !important;
+}
+
+
+//action link
+
+.nhsuk-action-link__link {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.55556;
+  padding-left: 38px;
+  position: relative;
+  text-decoration: none;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-action-link__link {
+    font-size: 22px;
+    line-height: 1.45455;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-action-link__link {
+    padding-left: 26px;
+  }
+}
+
+a:visited {
+  color: #4c2c92;
+}
+
+
+.nhsuk-action-link a:hover {
+  text-decoration: underline;
+  color: #003078;
+}
+
+a:active {
+  color: #002f5c;
+}
+
+
+.nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
+  fill: #28A197;
+  height: 36px;
+  left: -3px;
+  position: absolute;
+  top: -2px;
+  width: 36px;
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
+    height: 24px;
+    left: -2px;
+    margin-bottom: 0;
+    top: 2px;
+    width: 24px;
+  }
+}
+
+a:focus:hover {
+  text-decoration: none;
+}
+
+a:focus:visited {
+  color: #212b32;
 }
 
