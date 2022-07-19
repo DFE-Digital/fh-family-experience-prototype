@@ -78,32 +78,30 @@
         You can search here to find family hubs near you, or children’s centres, which may offer similar services.
       </p>
 
+      <form action="family-hub-results" method="post">  
+
+        {{ govukInput({
+          label: {
+            text: "Enter postcode to find your nearest family hub or children’s centre",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "postcode-hub",
+          name: "postcode-hub",
+          value: data['postcode-hub']
+        }) }}
+  
+  
+        {{ govukButton({
+          html: "Search"
+        }) }}
+  
+    </form>
+
     </div>
   </div>
 
-  <form action="support-for-families-results" method="post">
-    <div class="search__form">  
-        <div class="govuk-form-group autocomplete">
-          <label class="govuk-label govuk-label--s" for="search-term">
-            Search term
-          </label>
-          
-          <select class="govuk-select" id="search-term" name="search-term">
-            <option value="sleep" selected></option>
-            <option value="Causes of Sleep disorder">Causes of Sleep disorder</option>
-            <option value="Children Sleep Disorder">Children Sleep Disorders</option>
-            <option value="Sleep problems in young children">Sleep problems in young children</option>
-          </select>
-        </div>
 
-
-
-      {{ govukButton({
-        html: "Search"
-      }) }}
-
-    </div>  <!-- end of app-search-form-inner -->
-  </form>
 
 
   
