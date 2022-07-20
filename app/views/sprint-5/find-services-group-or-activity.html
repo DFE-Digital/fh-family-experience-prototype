@@ -1,0 +1,116 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hub"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups",
+      active: true
+    },
+    {
+      href: "#3",
+      text: "Online information and advice"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 2 of 3</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Find local services and groups for children, young people and families 
+      </h1>
+
+      <p>Search here to find services and groups near you.</p>  
+
+    </div>
+  </div>
+
+
+    <div class="govuk-width-container govuk-!-margin-bottom-4">
+      <form action="support-for-families-results" method="post">
+        <div class="search__form">  
+            <div class="govuk-form-group autocomplete">
+              <label class="govuk-label govuk-label--s" for="search-term">
+                What are you looking for?
+              </label>
+              
+              <select class="govuk-select" id="search-term" name="search-term">
+                <option value="sleep" selected></option>
+                <option value="Causes of Sleep disorder">Causes of Sleep disorder</option>
+                <option value="Children Sleep Disorder">Children Sleep Disorders</option>
+                <option value="Sleep problems in young children">Sleep problems in young children</option>
+              </select>
+            </div>
+
+            <div>
+              {{ govukInput({
+                label: {
+                  text: "Search  within",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                classes: "govuk-input--width-20",
+                id: "postcode",
+                name: "postcode",
+                value: ""
+              }) }}
+            </div>
+
+          {{ govukButton({
+            html: "Search"
+          }) }}
+
+        </div>  <!-- end of app-search-form-inner -->
+      </form>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Popular searches:</h3>
+      <div class="search__popular">
+        <a class="govuk-link" href="#">Toddler groups</a>
+        <a class="govuk-link" href="#">Breastfeeding</a>
+        <a class="govuk-link" href="#">Healthy eating</a>
+        <a class="govuk-link" href="#">Single parents</a>
+        <a class="govuk-link" href="#">Babies</a>
+        <a class="govuk-link" href="#">Teenagers</a>
+      </div>
+      
+    </div>
+
+
+
+
+  
+  
+{% endblock %}
+
+
+
+
+
+
