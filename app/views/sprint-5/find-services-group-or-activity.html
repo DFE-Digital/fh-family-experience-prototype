@@ -49,19 +49,24 @@
 
       <p>Search here to find services and groups near you.</p>  
 
+      
+      <span class="govuk-caption-l govuk-!-margin-bottom-4">Showing results for <a href="find-services-overview" class="govuk-link">{{ data['postcode-services'] }}</a></span>
+
     </div>
   </div>
 
 
     <div class="govuk-width-container govuk-!-margin-bottom-4">
-      <form action="support-for-families-results" method="post">
-        <div class="search__form">  
+      <form action="find-services-group-or-activity-results" method="post">
+
+        <div class="search__form"> 
+
             <div class="govuk-form-group autocomplete">
               <label class="govuk-label govuk-label--s" for="search-term">
                 What are you looking for?
               </label>
               
-              <select class="govuk-select" id="search-term" name="search-term">
+              <select class="govuk-select" id="search-term" name="search-term-services">
                 <option value="sleep" selected></option>
                 <option value="Causes of Sleep disorder">Causes of Sleep disorder</option>
                 <option value="Children Sleep Disorder">Children Sleep Disorders</option>
@@ -69,41 +74,87 @@
               </select>
             </div>
 
-            <div>
-              {{ govukInput({
+              {{ govukSelect({
+                id: "search-within",
+                name: "search-within-services",
                 label: {
-                  text: "Search  within",
-                  classes: "govuk-label--s",
-                  isPageHeading: false
+                  text: "Search within"
                 },
-                classes: "govuk-input--width-20",
-                id: "postcode",
-                name: "postcode",
-                value: ""
+                items: [
+                  {
+                    value: "5-miles",
+                    text: "5 miles",
+                    selected: true
+                  },
+                  {
+                    value: "10-miles",
+                    text: "10 miles"
+                  },
+                  {
+                    value: "20-miles",
+                    text: "20 miles"
+                  }
+                ]
               }) }}
-            </div>
+        
 
-          {{ govukButton({
-            html: "Search"
-          }) }}
+        
+              {{ govukSelect({
+                id: "age-range",
+                name: "age-range",
+                label: {
+                  text: "Age range"
+                },
+                items: [
+                  {
+                    value: "all-age-groups",
+                    text: "All age groups",
+                    selected: true
+                  },
+                  {
+                    value: "age-0-to-5",
+                    text: "Age 0 to 5"
+                  },
+                  {
+                    value: "age-5-to-11",
+                    text: "Age 5 to 11"
+                  },
+                  {
+                    value: "age-11-to-19",
+                    text: "Age 11 to 19"
+                  }
+                ]
+              }) }}
 
-        </div>  <!-- end of app-search-form-inner -->
+              {{ govukButton({
+                html: "Search"
+              }) }}
+
+        </div>
+       
       </form>
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Popular searches:</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Popular searches:</h3>
       <div class="search__popular">
-        <a class="govuk-link" href="#">Toddler groups</a>
-        <a class="govuk-link" href="#">Breastfeeding</a>
-        <a class="govuk-link" href="#">Healthy eating</a>
-        <a class="govuk-link" href="#">Single parents</a>
-        <a class="govuk-link" href="#">Babies</a>
-        <a class="govuk-link" href="#">Teenagers</a>
+        <a class="govuk-link" href="#">Breastfeeding support</a>
+        <a class="govuk-link" href="#">Child development clinic </a>
+        <a class="govuk-link" href="#">Parenting teens workshop</a>
+        <a class="govuk-link" href="#">Rhyme time</a>
       </div>
       
     </div>
 
-
-
+    <div class="govuk-grid-row govuk-!-margin-top-9">
+      <div class="govuk-grid-column-two-thirds">
+        <ul class="govuk-list">
+          <li>
+            <a href="#" class="govuk-link govuk-!-margin-bottom-6">Find your nearest family hub or children’s centre.</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Read advice on common topics.</a>
+          </li>
+      </div>
+    </div>
 
   
   

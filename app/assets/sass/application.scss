@@ -52,7 +52,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .search__form .govuk-form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -275,4 +275,17 @@ body > header > div > div.govuk-header__logo > a > span:nth-child(2) {
 
 body > header > div > div.govuk-header__logo {
   width: 39.99%;
+}
+
+
+.govuk-label {
+  font-weight: 700;
+}
+
+.govuk-select {
+  width: 100%;
+}
+
+#main-content > div.govuk-width-container.govuk-\!-margin-bottom-4 > form > div > button {
+  margin-bottom: 13px;
 }
