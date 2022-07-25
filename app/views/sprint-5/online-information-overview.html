@@ -1,0 +1,167 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hub"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups"
+    },
+    {
+      href: "online-information-start",
+      text: "Online information and advice",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="online-information-start">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    {{ mojSideNavigation({
+      label: 'Side navigation',
+      items: [{
+        text: 'Pregnancy, birth and postnatal',
+        href: '#1'
+      }, 
+      {
+        text: 'Caring for your child: sleep, food, health and more',
+        href: '#2',
+        active: true
+      }, 
+      {
+        text: 'Child development, behaviour and mental health',
+        href: '#3'
+      },
+      {
+        text: 'Special educational needs and disabilities (SEND)',
+        href: '#3'
+      },
+      {
+        text: 'Teenagers and young people',
+        href: '#3'
+      },
+      {
+        text: 'Family support: relationships, money and more',
+        href: '#3'
+      }
+      ]
+    }) }}
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Caring for your child: sleep, food, health and more</h1>
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Breastfeeding and feeding your baby
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <p class='govuk-body'>This is the content for Breastfeeding and feeding your baby.</p>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+              Children’s sleep
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <p class='govuk-body'>Lots of young children find it difficult to settle down to sleep and will wake up during the night.</p>
+          <p class='govuk-body'>For some people, this might not be a problem. But if you or your child are suffering from a lack of sleep, 
+            there are some simple techniques you can try.</p>
+          <p class='govuk-body'>Every child is different, so only do what you feel comfortable with and what you think will suit your child.</p>
+          <p class="govuk-body">Read more <a href="https://www.nhs.uk/conditions/baby/health/sleep-problems-in-young-children/" class="govuk-link">NHS advice on sleep for children.
+          </a></p>
+          <p class="govuk-body"><a href="find-services-overview" class="govuk-link">Search for local support.</a></p>
+        </div>
+      </div> 
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+              Healthy eating and nutrition
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+          <p class='govuk-body'>This is the content for Healthy eating and nutrition.</p>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Potty and toilet training
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+          <p class='govuk-body'>This is the content for Potty and toilet training.</p>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Vaccinations and immunisations
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+          <p class='govuk-body'>This is the content for Vaccinations and immunisations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+{% endblock %}
+
+
+
+
+
+
