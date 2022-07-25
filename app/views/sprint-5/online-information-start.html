@@ -1,0 +1,187 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hub"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups"
+    },
+    {
+      href: "#3",
+      text: "Online information and advice"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">See online information and advice</h1>
+    </div>
+  </div>
+ 
+
+  
+
+<div class="govuk-grid-row govuk-!-margin-top-6 online-info">
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+      <a href=""></a>
+      <div class="govuk-card__content">
+        <h2 class="govuk-heading-m">Pregnancy, birth and postnatal</h2>
+        <div class="nhsuk-action-link govuk-!-margin-top-10">
+          <a class="nhsuk-action-link__link" href="family-hub">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Start here</span>
+          </a>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+      <a href="" class=""></a>
+      <div class="govuk-card__content">
+        <h2 class="govuk-heading-m">Caring for your child: sleep, food, health and more</h2>
+        <div class="nhsuk-action-link govuk-!-margin-top-9">
+          <a class="nhsuk-action-link__link" href="find-services-overview">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Start here</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+      <a href=""></a>
+      <div class="govuk-card__content">
+        <h2 class="govuk-heading-m">Child development, behaviour and mental health</h2>
+        <div class="nhsuk-action-link govuk-!-margin-top-9">
+          <a class="nhsuk-action-link__link" href="#">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Start here</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row online-info">
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+      <a href=""></a>
+      <div class="govuk-card__content">
+        <h2 class="govuk-heading-m">Special educational needs and disabilities (SEND)</h2>
+        <div class="nhsuk-action-link govuk-!-margin-top-9">
+          <a class="nhsuk-action-link__link" href="family-hub">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Start here</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+      <a href="" class=""></a>
+      <div class="govuk-card__content">
+        <h2 class="govuk-heading-m">Teenagers and young people</h2>
+        <div class="nhsuk-action-link govuk-!-margin-top-10">
+          <a class="nhsuk-action-link__link" href="find-services-overview">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Start here</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+      <a href=""></a>
+      <div class="govuk-card__content">
+        <h2 class="govuk-heading-m">Family support: relationships, money and more</h2>
+        <div class="nhsuk-action-link govuk-!-margin-top-9">
+          <a class="nhsuk-action-link__link" href="#">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Start here</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>
+        <a href="family-hub" class="govuk-link govuk-!-margin-bottom-6">Find your nearest family hub or children’s centre.</a>
+      </li>
+      <li>
+        <a href="find-services-overview" class="govuk-link">Find local services and groups for children, young people and families</a>
+      </li>
+  </div>
+</div>
+
+
+  
+{% endblock %}
+
+
+
+
+
+
