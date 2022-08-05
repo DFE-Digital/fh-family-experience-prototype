@@ -20,6 +20,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+
 .custom-main {
   padding-top: 10px;
 }
@@ -260,8 +261,8 @@ a:focus:visited {
   margin-bottom: 10px;
 }
 
-#main-content .govuk-summary-list__key {
-  width: 50%;
+dt.govuk-summary-list__key {
+  width: 20%;
 }
 
 
