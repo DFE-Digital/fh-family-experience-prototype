@@ -20,24 +20,35 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// Globas styles
+
+img {
+  display: block;
+  max-width: 100%;
+}
 
 .custom-main {
-  padding-top: 10px;
+  padding-top: 1em;
 }
 
-.full-BGstrip {
-  margin-top: 10px;
-  // background-color:#F2F2F2;
-}
 
 .search__form {
   display: flex;
   align-items: end;
-  column-gap: 20px;
+  column-gap: 15px;
 }
 
 .search__form > div {
   width: 35%;
+}
+@media (max-width: 40.0625em) {
+  .search__form {
+    display: block;
+  }
+
+  .search__form > div {
+    width: 100%;
+  }
 }
 
 #main-content > div.full-BGstrip.govuk-\!-margin-top-4 > div > form > div > button {
@@ -101,11 +112,18 @@ body > header > div > div.govuk-header__content {
   width: 60%;
 }
 
+@media (max-width: 50em) {
+  body > header > div > div.govuk-header__content {
+    display:block;
+  }
+}
+
+
+
 // three boxes on home page
 
 
 .govuk-card {
-  height: 230px;
   border: 1px solid #B1B4B6;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -114,6 +132,7 @@ body > header > div > div.govuk-header__content {
 
 @media (min-width: 40.0625em) {
   .govuk-card {
+    max-height: 380px;
     margin-bottom: 30px;
     padding-bottom: 30px;
   }
@@ -262,7 +281,13 @@ a:focus:visited {
 }
 
 dt.govuk-summary-list__key {
-  width: 20%;
+  max-width: 20%;
+}
+
+@media (max-width: 40.0525em) {
+  dt.govuk-summary-list__key {
+    max-width: 100%;
+  }
 }
 
 
@@ -287,14 +312,34 @@ body > header > div > div.govuk-header__logo {
   width: 100%;
 }
 
-#main-content > div.govuk-width-container.govuk-\!-margin-bottom-4 > form > div > button {
+#main-content > div:nth-child(2) > div > form > div > button {
   margin-bottom: 13px;
 }
 
 .online-info .govuk-card {
-  margin-bottom: 20px;
+  margin-bottom: 2em;
 }
 
 .online-info .govuk-card {
   border-top: 10px solid #1D70B8;
+  min-height: 250px;
 }
+
+@media (max-width: 40.0525em) {
+  .online-info .govuk-card {
+    min-height: 130px;
+  }
+}
+
+.map-description .govuk-grid-column-one-third > div {
+  float: right;
+  margin-bottom: 0;
+}
+
+@media (max-width: 40.0525em) {
+  #main-content > div > div.govuk-grid-column-two-thirds > h1 {
+    margin-top: 1em;
+  }
+}
+
+
