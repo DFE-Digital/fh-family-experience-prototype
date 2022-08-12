@@ -31,6 +31,16 @@ img {
   padding-top: 1em;
 }
 
+@media (max-width: 40.0625em) {
+  .govuk-heading-l {
+    font-size: 1.7rem;
+    line-height: 1.1;
+  }
+  .govuk-heading-m {
+    font-size: 1.3rem;
+  }
+}
+
 
 .search__form {
   display: flex;
