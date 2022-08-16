@@ -44,7 +44,7 @@
       <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 3 of 3</span>
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-        Your nearest services and groups for children, young people and families. 
+        Your nearest services and groups for breastfeeding support 
       </h1>
       
     </div>
@@ -69,65 +69,33 @@
               </select>
             </div>
 
-              {{ govukSelect({
-                id: "search-within",
-                name: "search-within",
-                label: {
-                  text: "Search within"
-                },
-                items: [
-                  {
-                    value: "5-miles",
-                    text: "5 miles",
-                    selected: true
-                  },
-                  {
-                    value: "10-miles",
-                    text: "10 miles"
-                  },
-                  {
-                    value: "20-miles",
-                    text: "20 miles"
-                  }
-                ]
-              }) }}
-        
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="search-within">
+                Search within
+              </label>
+              <select class="govuk-select" id="search-within" name="search-within-services-2">
+                <option value="5 miles">5 miles</option>
+                <option value="10 miles">10 miles</option>
+                <option selected value="20 miles">20 miles</option>
+              </select>
+            </div>
 
-        
-              {{ govukSelect({
-                id: "age-range",
-                name: "age-range",
-                label: {
-                  text: "Age range"
-                },
-                items: [
-                  {
-                    value: "all-age-groups",
-                    text: "All age groups",
-                    selected: true
-                  },
-                  {
-                    value: "age-0-to-5",
-                    text: "Age 0 to 5"
-                  },
-                  {
-                    value: "age-5-to-11",
-                    text: "Age 5 to 11"
-                  },
-                  {
-                    value: "age-11-to-19",
-                    text: "Age 11 to 19"
-                  },
-                  {
-                    value: "age-20-to-25",
-                    text: "Age 20 to 25 with SEND"
-                  }
-                ]
-              }) }}
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="age-range">
+                Age range
+              </label>
+              <select class="govuk-select" id="age-range" name="age-range">
+                <option selected value="Age 0 to 5">Age 0 to 5</option>
+                <option value="Age 5 to 11">Age 5 to 11</option>
+                <option value="Age 11 to 19">Age 11 to 19</option>
+                <option value="Age 20 to 25 with SEND">Age 20 to 25 with SEND</option>
+                <option value="Parents and carers">Parents and carers</option>
+              </select>
+            </div>
 
-              {{ govukButton({
-                html: "Search"
-              }) }}
+            {{ govukButton({
+              html: "Search"
+            }) }}
 
         </div>
        
@@ -159,7 +127,7 @@
       </div>
 
       <h2 class="govuk-heading-l govuk-!-margin-top-6">
-        Salford sleep services for children
+        Salford breastfeeding support services
       </h2>
       
       <!-- <hr> -->
@@ -169,7 +137,7 @@
 
           <div class="govuk-summary-list__row">
             <div class="govuk-summary-list__key">
-              <p class="govuk-body">1. <a href="https://www.cuh.nhs.uk/our-services/childrens-services-paediatrics/paediatric-respiratory-service/childrens-sleep-service/" class="govuk-link govuk-label--m">Children’s sleep clinic (0.4 miles)</a></p>
+              <p class="govuk-body">1. <a href="https://www.breastfeedinginsalford.org.uk/" class="govuk-link govuk-label--m">BOOBS (Be Open On Breastfeeding in Salford) (0.2 miles)</a></p>
             </div>
           </div>
     
@@ -179,7 +147,7 @@
                 Run by 
               </dt>
               <dd class="govuk-summary-list__value">
-                Salford University Hospital
+                Breastfeeding in Salford
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -187,7 +155,7 @@
                 Age range 
               </dt>
               <dd class="govuk-summary-list__value">
-                0 to 16
+                0 to 5
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -195,7 +163,8 @@
                 When 
               </dt>
               <dd class="govuk-summary-list__value">
-                Wednesdays, 9am to 5pm
+                Varies (monthly breastfeeding cafes, breastfeeding peer support Monday to 
+                Friday between 9am and 5pm), and breastfeeding courses on weekday evenings 
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -203,7 +172,7 @@
                 Where 
               </dt>
               <dd class="govuk-summary-list__value">
-                Salford University Hospital, Barrack Road, Salford MH5 6RT
+                Online or face to face at play groups and cafes in Salford and Bury
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -211,7 +180,7 @@
                 Phone
               </dt>
               <dd class="govuk-summary-list__value">
-                0161 411611
+                Rachel: 07426835535
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -219,7 +188,7 @@
                 Email
               </dt>
               <dd class="govuk-summary-list__value">
-                salforduniversityhospital@nhs.uk
+                rachel@breastfeedinginsalford.org.uk 
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -227,7 +196,7 @@
                 Availability
               </dt>
               <dd class="govuk-summary-list__value">
-                By GP or other professional referral only
+                By appointment or drop in, online or in person
               </dd>
             </div>
           </dl>
@@ -238,7 +207,7 @@
 
         <div class="govuk-summary-list__row">
           <div class="govuk-summary-list__key">
-            <p class="govuk-body">2. <a href="https://cindex.camden.gov.uk/kb5/camden/cd/service.page?id=LLRuOXDDTuk" class="govuk-link govuk-label--m">Mosaic sleep workshops (0.7 miles)</a></p>
+            <p class="govuk-body">2. <a href="https://www.salfordccg.nhs.uk/start-well/baby-social-groups-salford" class="govuk-link govuk-label--m">Baby Social, South Family Hub, Winton (0.4 miles)</a></p>
           </div>
         </div>
     
@@ -248,7 +217,7 @@
               Run by 
             </dt>
             <dd class="govuk-summary-list__value">
-              Central family hub
+              NHS Salford Clinical Commissioning Group
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -256,7 +225,7 @@
               Age range 
             </dt>
             <dd class="govuk-summary-list__value">
-              0 to 9
+              0 to 5
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -264,7 +233,7 @@
               When 
             </dt>
             <dd class="govuk-summary-list__value">
-              15 August and 30 September, 7pm to 10pm (online workshop over 2 evenings)
+              Thursdays, 10am to 11am
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -272,7 +241,13 @@
               Where 
             </dt>
             <dd class="govuk-summary-list__value">
-              Online course
+              South Family Hub
+              Winton Children’s Centre
+              Brindley Street
+              Winton
+              Eccles
+              Salford
+              M30 8AB
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -280,7 +255,7 @@
               Phone
             </dt>
             <dd class="govuk-summary-list__value">
-              01612 422622
+              0161 686 5260
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -288,7 +263,7 @@
               Email
             </dt>
             <dd class="govuk-summary-list__value">
-              p.stott@nhs.net
+              <a href="https://childrensportalehm.salford.gov.uk/web/portal/pages/booking/ehor#ssa">Online form</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -296,7 +271,7 @@
               Availability
             </dt>
             <dd class="govuk-summary-list__value">
-              Contact to book a place
+              Drop in
             </dd>
           </div>
         </dl>

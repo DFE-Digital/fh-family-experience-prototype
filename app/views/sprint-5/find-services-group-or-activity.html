@@ -74,61 +74,32 @@
               </select>
             </div>
 
-              {{ govukSelect({
-                id: "search-within",
-                name: "search-within-services",
-                label: {
-                  text: "Search within"
-                },
-                items: [
-                  {
-                    value: "5-miles",
-                    text: "5 miles",
-                    selected: true
-                  },
-                  {
-                    value: "10-miles",
-                    text: "10 miles"
-                  },
-                  {
-                    value: "20-miles",
-                    text: "20 miles"
-                  }
-                ]
-              }) }}
-        
 
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="search-within">
+                  Search within
+                </label>
+                <select class="govuk-select" id="search-within" name="search-within-services">
+                  <option value="5 miles">5 miles</option>
+                  <option value="10 miles">10 miles</option>
+                  <option value="20 miles" selected>20 miles</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="age-range">
+                  Age range
+                </label>
+                <select class="govuk-select" id="age-range" name="age-range">
+                  <option value="All age groups" selected>All age groups</option>
+                  <option value="Age 0 to 5">Age 0 to 5</option>
+                  <option value="Age 5 to 11">Age 5 to 11</option>
+                  <option value="Age 11 to 19">Age 11 to 19</option>
+                  <option value="Age 20 to 25 with SEND">Age 20 to 25 with SEND</option>
+                  <option value="Parents and carers">Parents and carers</option>
+                </select>
+              </div>
         
-              {{ govukSelect({
-                id: "age-range",
-                name: "age-range",
-                label: {
-                  text: "Age range"
-                },
-                items: [
-                  {
-                    value: "all-age-groups",
-                    text: "All age groups",
-                    selected: true
-                  },
-                  {
-                    value: "age-0-to-5",
-                    text: "Age 0 to 5"
-                  },
-                  {
-                    value: "age-5-to-11",
-                    text: "Age 5 to 11"
-                  },
-                  {
-                    value: "age-11-to-19",
-                    text: "Age 11 to 19"
-                  },
-                  {
-                    value: "age-20-to-25",
-                    text: "Age 20 to 25 with SEND"
-                  }
-                ]
-              }) }}
 
               {{ govukButton({
                 html: "Search"
