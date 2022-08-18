@@ -52,17 +52,11 @@
 
         <div class="search__form"> 
 
-            <div class="govuk-form-group autocomplete">
+            <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="search-term">
                 What are you looking for?
               </label>
-              
-              <select class="govuk-select" id="search-term" name="search-term-services-2">
-                <option selected>Breastfeeding support</option>
-                <option value="Causes of Sleep disorder">Causes of sleep disorder</option>
-                <option value="Children Sleep Disorder">Children sleep disorders</option>
-                <option value="Sleep problems in young children">Sleep problems in young children</option>
-              </select>
+              <input class="govuk-input" id="search-term" name="search-term-services-2" type="text" value="Breastfeeding support">
             </div>
 
             <div class="govuk-form-group">
@@ -100,31 +94,21 @@
       
     </div>
   </div>
-
-      <div class="govuk-grid-row map-description">
-        <div class="govuk-grid-column-two-thirds">
-          <span class="govuk-caption-l">Showing results for Salford <a href="find-services-overview" class="govuk-link">{{ data['postcode-services'] }}</a></span>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <div class="govuk-body">Showing <span class="govuk-!-font-weight-bold">2</span> results</div>
-        </div>
-      </div>
     
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <img src="/public/images/map-service.jpg" alt="map" class="govuk-!-margin-top-2 govuk-!-margin-bottom-4">
-          <p><span class="govuk-!-font-weight-bold">Sort by: </span>
+
+      <div class="govuk-grid-row govuk-!-margin-top-4">
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-s" style="margin-bottom: 0;">Showing breastfeeding support for <a href="family-hub" class="govuk-link">{{ data['postcode-hub'] }}</a></h2> 
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <p style="float: right;"><span class="govuk-!-font-weight-bold">Sort by: </span>
             Most relevant first
             <span class="govuk-!-font-weight-bold">|</span>
             <a href="#"> Distance first</a>
           </p>
-          <hr>
         </div>
       </div>
-
-      <h2 class="govuk-heading-l govuk-!-margin-top-6">
-        Salford breastfeeding support services
-      </h2>
+      <hr>
       
       <!-- <hr> -->
       
