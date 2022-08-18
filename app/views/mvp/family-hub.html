@@ -1,0 +1,115 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hubs",
+      active: true
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups"
+    },
+    {
+      href: "online-information-start",
+      text: "Online information and advice"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        What is a family hub? 
+      </h1>
+
+      <p>Family hubs bring together local services in one place for families.</p>  
+      <p>Family hubs offer a wide range of services for the whole family, including:</p>   
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>babies</li>
+        <li>children</li>
+        <li>teenagers up to age 19</li>
+        <li>parents and carers</li>
+        <li>young people with special educational needs and disabilities up to age 25</li>
+      </ul>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-4">
+        What do family hubs offer? 
+      </h2>
+      <p>Each hub or children’s centre offers a different range of services and activities, for example:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>breastfeeding support</li>
+        <li>child development clinics</li>
+        <li>parenting workshops</li>
+        <li>mental health help </li>
+        <li>groups and clubs</li>
+      </ul>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-4">
+        Where are family hubs?
+      </h2>
+      <p>There is normally a base for a family hub or children’s centre. 
+        Some services may run from different locations, like community centres or health clinics.
+      </p>
+
+      <p>There are family hubs all over England, run by local councils. 
+        You can search here to find family hubs near you, or children’s centres, which may offer similar services.
+      </p>
+
+      <form action="family-hub-results" method="post">  
+
+        {{ govukInput({
+          label: {
+            text: "Enter postcode to find your nearest family hub or children’s centre",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "postcode-hub",
+          name: "postcode-hub",
+          value: data['postcode-hub']
+        }) }}
+  
+  
+        {{ govukButton({
+          html: "Search"
+        }) }}
+  
+    </form>
+
+    </div>
+  </div>
+
+
+
+
+  
+  
+{% endblock %}
+
+
+
+
+
+

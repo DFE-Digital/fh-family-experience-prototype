@@ -1,0 +1,131 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hubs"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups",
+      active: true
+    },
+    {
+      href: "online-information-start",
+      text: "Online information and advice"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 3 of 3</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Your nearest services and groups for children, young people and families. 
+      </h1>
+      
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+      <form action="#" method="post">
+
+        <div class="search__form"> 
+
+              <div class="govuk-form-group autocomplete">
+                <label class="govuk-label govuk-label--s" for="search-term">
+                  What are you looking for?
+                </label>
+                
+                <select class="govuk-select" id="search-term" name="search-term-services-2">
+                  <option selected>{{ data['search-term-services'] }}</option>
+                  <option value="Causes of Sleep disorder">Causes of sleep disorder</option>
+                  <option value="Children Sleep Disorder">Children sleep disorders</option>
+                  <option value="Sleep problems in young children">Sleep problems in young children</option>
+                </select>
+              </div>
+        
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="search-within">
+                  Search within
+                </label>
+                <select class="govuk-select" id="search-within" name="search-within-services-2">
+                  <option selected>{{ data['search-within-services'] }}</option>
+                  <option value="5 miles">5 miles</option>
+                  <option value="10 miles">10 miles</option>
+                  <option value="20 miles">20 miles</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="age-range">
+                  Age range
+                </label>
+                <select class="govuk-select" id="age-range" name="age-range">
+                  <option selected>{{ data['age-range'] }}</option>
+                  <option value="Age 0 to 5">Age 0 to 5</option>
+                  <option value="Age 5 to 11">Age 5 to 11</option>
+                  <option value="Age 11 to 19">Age 11 to 19</option>
+                  <option value="Age 20 to 25 with SEND">Age 20 to 25 with SEND</option>
+                  <option value="Parents and carers">Parents and carers</option>
+                </select>
+              </div>
+        
+
+              {{ govukButton({
+                html: "Search"
+              }) }}
+
+        </div>
+       
+      </form>
+      <p> Try searching again with a wider search area or expanding the age range.</p>
+    </div>
+  </div>
+
+    
+    <div class="govuk-grid-row govuk-!-margin-top-9">
+      <div class="govuk-grid-column-two-thirds">
+        <ul class="govuk-list">
+          <li>
+            <a href="family-hub" class="govuk-link govuk-!-margin-bottom-6">Find your nearest family hub or children’s centre.</a>
+          </li>
+          <li>
+            <a href="online-information-start" class="govuk-link">Read advice on common topics.</a>
+          </li>
+      </div>
+    </div>
+
+  
+  
+{% endblock %}
+
+
+
+
+
+
