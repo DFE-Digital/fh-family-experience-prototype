@@ -1,0 +1,59 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hubs",
+      active: true
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Not seeing anything suitable in your area?
+      </h1>
+     
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body" style="display: inline-block;">You can also find <a href="find-services-overview" class="govuk-link">local services and groups</a></p>   
+    </div>
+  </div>
+  
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,168 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hubs"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 1 of 3</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Find local services and groups for children, young people and families 
+      </h1>
+
+      <p>Search here to find services and groups near you.</p>  
+      <p>Depending on where you live, there may be different services and groups.</p>   
+
+      <h2 class="govuk-heading-m">You could search for:</h2>
+      <!-- <h2 class="govuk-heading-m">groups, classes and workshops, for example:</h2> -->
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Groups, classes and workshops, for example:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <li>playgroups</li>
+            <li>youth clubs</li>
+            <li>special educational needs and disabilities (SEND) groups</li>
+            <li>parenting workshops, in person or online</li>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Pregnancy, birth and postnatal services and support, for example:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <li>childbirth classes</li>
+            <li>breastfeeding support</li>
+            <li>baby weighing</li>
+            <li>baby yoga</li>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Support and advice about caring for your child, for example about:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <li>feeding and eating</li>
+            <li>health and vaccinations</li>
+            <li>sleep </li>
+            <li>toilet training </li>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Child development support and advice, for example about:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <li>SEND</li>
+            <li>behaviour</li>
+            <li>mental health</li>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help and advice for teenagers and young people, for example about:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <li>health and wellbeing</li>
+            <li>staying safe online</li>
+            <li>sex and relationships </li>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Family and carer support, for example about:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <li>benefits and finances</li>
+            <li>parenting and relationships</li>
+            <li>mental health and wellbeing</li>
+          </div>
+        </details>
+     
+
+      <form action="find-services-group-or-activity" method="post">  
+
+        {{ govukInput({
+          label: {
+            text: "Enter your postcode to find your nearest services and groups",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "postcode-services",
+          name: "postcode-services",
+          value: data['postcode-services']
+        }) }}
+  
+  
+        {{ govukButton({
+          html: "Next"
+        }) }}
+  
+    </form>
+
+    </div>
+  </div>
+
+
+
+
+  
+  
+{% endblock %}
+
+
+
+
+
+
