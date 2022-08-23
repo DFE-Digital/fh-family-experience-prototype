@@ -78,12 +78,13 @@
 
         {{ govukInput({
           label: {
-            text: "Enter postcode to find your nearest family hub or children’s centre",
+            text: "Enter postcode",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           id: "postcode-hub",
           name: "postcode-hub",
+          classes: "govuk-input--width-10",
           value: data['postcode-hub']
         }) }}
   
