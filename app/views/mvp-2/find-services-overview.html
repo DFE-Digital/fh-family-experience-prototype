@@ -135,12 +135,13 @@
 
         {{ govukInput({
           label: {
-            text: "Enter your postcode to find your nearest services and groups",
+            text: "Enter postcode",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           id: "postcode-services",
           name: "postcode-services",
+          classes: "govuk-input--width-10",
           value: data['postcode-services']
         }) }}
   
