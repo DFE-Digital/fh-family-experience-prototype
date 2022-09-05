@@ -5,6 +5,9 @@ $govuk-new-link-styles: true;
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
 
+// GOV.UK Frontend’s styles to your CSS file
+@import "node_modules/govuk-frontend/govuk/all";
+
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import ".tmp/sass/extensions";
 
@@ -20,11 +23,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-// from Ed Horsford
-@import "summary-list/summary-list";
 
 // apprenticeships patterns
 @import "patterns/cards";
+
+// from Ed Horsford
+@import "summary-list/summary-list";
 
 // Globas styles
 
