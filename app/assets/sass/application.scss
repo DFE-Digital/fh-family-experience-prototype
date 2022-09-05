@@ -20,6 +20,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// from Ed Horsford
+@import "summary-list/summary-list";
+
+// apprenticeships patterns
+@import "patterns/cards";
+
 // Globas styles
 
 img {
