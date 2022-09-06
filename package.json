@@ -1,7 +1,7 @@
 {
   "name": "govuk-prototype-kit",
   "description": "Rapidly create HTML prototypes of GOV.UK services",
-  "version": "12.1.1",
+  "version": "12.2.0",
   "private": true,
   "engines": {
     "node": ">=12.0.0 <17.0.0"
@@ -12,6 +12,7 @@
     "serve": "node listen-on-port"
   },
   "dependencies": {
+    "@govuk-prototype-kit/step-by-step": "^2.0.0",
     "@ministryofjustice/frontend": "^1.4.2",
     "acorn": "^8.5.0",
     "ansi-colors": "^4.1.1",
@@ -37,14 +38,12 @@
     "marked": "^4.0.10",
     "nodemon": "^2.0.15",
     "notifications-node-client": "^5.1.0",
-    "nunjucks": "^3.2.3",
+    "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",
     "require-dir": "^1.0.0",
+    "sass": "^1.49.10",
     "sync-request": "^6.0.0",
     "universal-analytics": "^0.5.3",
     "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "sass": "^1.54.8"
   }
 }
