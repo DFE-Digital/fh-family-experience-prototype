@@ -20,3 +20,4 @@ node_modules/
 /cypress/support
 /cypress/temp
 tmp/
+docs/assets/images/docs/backwards-compatibility-atom 2.png
