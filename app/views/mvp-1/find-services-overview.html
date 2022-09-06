@@ -44,27 +44,7 @@
       </h1>
 
       <p>Search here to find services and groups near you.</p>
-
-      <form action="find-services-group-or-activity" method="post">  
-
-        {{ govukInput({
-          label: {
-            text: "Enter postcode",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          },
-          id: "postcode-services",
-          name: "postcode-services",
-          classes: "govuk-input--width-10",
-          value: data['postcode-services']
-        }) }}
-  
-  
-        {{ govukButton({
-          html: "Search"
-        }) }}
-  
-      </form>  
+ 
 
       <p>Depending on where you live, there may be different services and groups, for example:</p>
 
@@ -77,6 +57,26 @@
       <li>support for families and carers, for example on money, relationships or mental health</li>
     </ul>
 
+    <form action="find-services-group-or-activity" method="post">  
+
+      {{ govukInput({
+        label: {
+          text: "Enter postcode",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        id: "postcode-services",
+        name: "postcode-services",
+        classes: "govuk-input--width-10",
+        value: data['postcode-services']
+      }) }}
+
+
+      {{ govukButton({
+        html: "Search"
+      }) }}
+
+    </form> 
 
     </div>
   </div>
