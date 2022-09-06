@@ -43,20 +43,8 @@
         Find local services and groups for children, young people and families 
       </h1>
 
-      <p>Search here to find services and groups near you.</p>  
-      <p>Depending on where you live, there may be different services and groups, for example:</p>
+      <p>Search here to find services and groups near you.</p>
 
-<ul class="govuk-list govuk-list--bullet">
-<li>groups, classes and workshops, like playgroups, youth clubs or parenting workshops</li>
-<li>pregnancy, birth and postnatal services, like breastfeeding support or childbirth classes</li>
-<li>support and advice about caring for your child, for example about sleep, feeding or toilet training</li>
-<li>child development support and advice, for example about special educational needs and disabilities (SEND), behaviour or mental health</li>
-<li>help for teenagers and young people, for example about health, sex or staying safe online</li>
-<li>support for families and carers, for example on money, relationships or mental health</li>
-
-</ul>
-
-     
       <form action="find-services-group-or-activity" method="post">  
 
         {{ govukInput({
@@ -73,10 +61,22 @@
   
   
         {{ govukButton({
-          html: "Next"
+          html: "Search"
         }) }}
   
-    </form>
+      </form>  
+
+      <p>Depending on where you live, there may be different services and groups, for example:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>groups, classes and workshops, like playgroups, youth clubs or parenting workshops</li>
+      <li>pregnancy, birth and postnatal services, like breastfeeding support or childbirth classes</li>
+      <li>support and advice about caring for your child, for example about sleep, feeding or toilet training</li>
+      <li>child development support and advice, for example about special educational needs and disabilities (SEND), behaviour or mental health</li>
+      <li>help for teenagers and young people, for example about health, sex or staying safe online</li>
+      <li>support for families and carers, for example on money, relationships or mental health</li>
+    </ul>
+
 
     </div>
   </div>
