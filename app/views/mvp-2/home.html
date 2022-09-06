@@ -1,0 +1,96 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+  <div class="full-BGstrip">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Find your local family support services</h1>
+        <p>You can find local support for you or your family, including:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>babies</li>
+          <li>children</li>
+          <li>young people up to age 19 (up to 25 with special educational needs and disabilities)</li>
+          <li>parents and carers</li>
+        </ul>
+
+        <p>A lot of family services are available from your local family hub or children’s centre. 
+          You can also search for support and social groups in your area, for example:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>breastfeeding support</li>
+          <li>child development clinics</li>
+          <li>parenting workshops</li>
+          <li>baby yoga</li>
+          <li>baby classes</li>
+          <li>youth groups</li>
+        </ul>
+
+        <form action="find-services-group-or-hubs" method="post" class="search__form_2">  
+
+          {{ govukInput({
+            label: {
+              text: "Enter postcode",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            id: "postcode-services",
+            name: "postcode-services",
+            classes: "govuk-input--width-10",
+            value: data['postcode-services']
+          }) }}
+    
+          {{ govukButton({
+            html: "Search"
+          }) }}
+    
+        </form> 
+    
+
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  
+{% endblock %}
+
+
+
+
+
+

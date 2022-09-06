@@ -1,0 +1,618 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: "",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 2 of 3</span> -->
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Find local services and groups for children, young people and families 
+      </h1>
+
+      <p style="margin-bottom: 0;">Search here to find family hubs, services and groups near you.</p> 
+      
+      <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for <a href="home" class="govuk-link">{{ data['postcode-services'] }}</a></span>
+
+
+    </div>
+  </div>
+
+  <!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-4">
+      <form action="find-services-group-or-activity-results" method="post">
+       
+      </form>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Popular searches:</h3>
+      <div class="search__popular">
+        <a class="govuk-link" href="find-services-group-or-activity-results-breastfeeding-support">Breastfeeding support</a>
+        <a class="govuk-link" href="#">Child development clinic </a>
+        <a class="govuk-link" href="#">Parenting teens workshop</a>
+        <a class="govuk-link" href="#">Rhyme time</a>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      
+      <div class="moj-filter">
+
+        <div class="moj-filter__header" style="padding: 0;">
+          <!-- <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
+          </div> -->
+        <div class="moj-filter__header-action">
+
+        </div>
+      
+        </div>
+      
+        <div class="moj-filter__content">
+      
+          <div class="moj-filter__selected">
+      
+            <div class="moj-filter__selected-heading">
+       
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Filter results</h2>
+              </div>
+      
+              <div class="moj-filter__heading-action">
+                <p style="font-size: 16px"><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+              </div>
+      
+            </div>
+
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Type of service</h3>
+
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Both</a></li>
+            </ul>
+          
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Search within</h3>
+
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>20 miles</a></li>
+            </ul>
+      
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Age range</h3>
+      
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>All age groups</a></li>
+            </ul>
+      
+          </div>
+      
+          <div class="moj-filter__options">
+      
+            <button class="govuk-button" data-module="govuk-button">
+              Apply filters
+            </button>
+      
+            <!-- <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="keywords">
+                Keywords
+              </label>
+      
+              <input class="govuk-input" id="keywords" name="keywords" type="text">
+            </div> -->
+
+            <div class="govuk-form-group">
+      
+              <fieldset class="govuk-fieldset">
+      
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Type of service
+                </legend>
+      
+                {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                  classes: "govuk-radios--small",
+                  idPrefix: "family-hubs-services-and-groups",
+                  name: "family-hubs-services-and-groups",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "family-hubs",
+                      text: "Family hubs"
+                    },
+                    {
+                      value: "services-and-groups",
+                      text: "Services and groups"
+                    },
+                    {
+                      value: "both",
+                      text: "Both",
+                      checked: true
+                    }
+                  ]
+                }) }}
+      
+              </fieldset>
+      
+            </div>
+      
+            <div class="govuk-form-group">
+      
+              <fieldset class="govuk-fieldset">
+      
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Search within
+                </legend>
+      
+                {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                  classes: "govuk-radios--small",
+                  idPrefix: "search-within",
+                  name: "search-within",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "one-miles",
+                      text: "1 mile"
+                    },
+                    {
+                      value: "five-miles",
+                      text: "5 miles"
+                    },
+                    {
+                      value: "ten-miles",
+                      text: "10 miles"
+                    },
+                    {
+                      value: "twenty-miles",
+                      text: "20 miles",
+                      checked: true
+                    }
+                  ]
+                }) }}
+      
+              </fieldset>
+      
+            </div>
+
+      
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Age range
+                </legend>
+      
+                {{ govukRadios({
+                  classes: "govuk-radios--small",
+                  idPrefix: "age-range",
+                  name: "age-range",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "1",
+                      text: "All age groups",
+                      checked: true
+                    },
+                    {
+                      value: "2",
+                      text: "Age 0 to 5"
+                    },
+                    {
+                      value: "3",
+                      text: "Age 5 to 11"
+                    },
+                    {
+                      value: "4",
+                      text: "Age 11 to 19"
+                    },
+                    {
+                      value: "5",
+                      text: "Age 20 to 25 with SEND"
+                    }
+                  ]
+                }) }}
+      
+              </fieldset>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+      
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="" method="post">
+        <div class="search__form"> 
+          <div style="width: 100%;">
+            <label class="govuk-label govuk-label--s" for="search-term">
+              What are you looking for?
+            </label>
+            <input class="govuk-input govuk-!-width-full" id="search-term" name="search-term-services" type="text">
+          </div>
+          <button class="govuk-button" data-module="govuk-button" style="margin-bottom: 3px;">
+            Search
+          </button>
+        </div>
+      </form> 
+
+      
+      
+      <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__key">
+          <p class="govuk-body govuk-!-margin-bottom-0">1. <a href="https://www.breastfeedinginsalford.org.uk/" class="govuk-link govuk-label--s">BOOBS Be Open On Breastfeeding in Salford (0.2 miles)</a></p>
+        </div>
+      </div>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Run by 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Breastfeeding in Salford
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age range 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0 to 5
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Varies (monthly breastfeeding cafes, breastfeeding peer support Monday to Friday between 9am and 5pm, and breastfeeding courses on weekday evenings)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Online or face to face at playgroups and cafes in Salford and Bury
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Rachel: 07426 835 5351
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            rachel@breastfeedinginsalford.org.uk
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Availability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            By appointment or drop in, online or in person
+          </dd>
+        </div>
+      </dl>
+    
+
+    <hr class="govuk-!-margin-bottom-4">
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <p class="govuk-body govuk-!-margin-bottom-0">2. <a href="https://www.salfordccg.nhs.uk/start-well/baby-social-groups-salford" class="govuk-link govuk-label--s">Baby Social, South Family Hub, Winton (0.4 miles)</a></p>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NHS Salford Clinical Commissioning Group
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0 to 5
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Thursdays, 10am to 11am
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          South Family Hub<br>
+          Winton Children’s Centre<br>
+          Brindley Street<br>
+          Winton<br>
+          Eccles<br>
+          Salford<br>
+          M30 8AB<br>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0161 686 5260
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://childrensportalehm.salford.gov.uk/web/portal/pages/booking/ehor#ssa">Online form</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Drop in
+        </dd>
+      </div>
+    </dl>
+
+    <hr class="govuk-!-margin-bottom-4">
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <p class="govuk-body govuk-!-margin-bottom-0">3. <a href="https://cindex.camden.gov.uk/kb5/camden/cd/service.page?id=LLRuOXDDTuk" class="govuk-link govuk-label--s">Mosaic sleep workshops (0.7 miles)</a></p>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Central family hub
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0 to 9
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          15 August and 30 September, 7pm to 10pm (online workshop over 2 evenings)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Online course
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          01612 422622
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          p.stott@nhs.net
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Contact to book a place
+        </dd>
+      </div>
+    </dl>
+
+
+    <!-- <ul class="search-results" role="list">
+      <li role="listitem" tab-index="0">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          <a class="govuk-link" href="https://www.cuh.nhs.uk/our-services/childrens-services-paediatrics/paediatric-respiratory-service/childrens-sleep-service/">1. Children’s sleep clinic (0.4 miles)</a>
+        </h2>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Run by</dt>
+          <dd>Salford University Hospital</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Age range</dt>
+          <dd>0 to 16</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">When</dt>
+          <dd>Wednesdays, 9am to 5pm</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Where</dt>
+          <dd>Salford University Hospital<br>
+            Barrack Road<br>
+            Salford MH5 6RT</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">When</dt>
+          <dd>Wednesdays, 9am to 5pm</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Phone</dt>
+          <dd>0161 411611</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">When</dt>
+          <dd>Wednesdays, 9am to 5pm</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Phone</dt>
+          <dd>0161 411611</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Email</dt>
+          <dd>salforduniversityhospital@nhs.uk</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Availability</dt>
+          <dd>By GP or other professional referral only</dd>
+        </dl>
+      </li>
+
+      <li role="listitem" tab-index="0">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          <a class="govuk-link" href="https://cindex.camden.gov.uk/kb5/camden/cd/service.page?id=LLRuOXDDTuk">2. Mosaic sleep workshops (0.7 miles)</a>
+        </h2>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Run by</dt>
+          <dd>Central family hub</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Age range</dt>
+          <dd>0 to 9</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">When</dt>
+          <dd>15 August and 30 September, 7pm to 10pm (online workshop over 2 evenings)</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Where</dt>
+          <dd>Online course</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Phone</dt>
+          <dd>01612 422622</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Email</dt>
+          <dd>p.stott@nhs.net</dd>
+        </dl>
+        <dl class="govuk-body-s dtmargins">
+          <dt class="govuk-!-font-weight-bold">Availability</dt>
+          <dd>Contact to book a place</dd>
+        </dl>
+      </li>
+    </ul> -->
+
+    <hr class="govuk-!-margin-bottom-4">
+
+    <div class="nhsuk-action-link govuk-!-margin-top-7">
+      <a class="nhsuk-action-link__link" href="family-hub">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Find your nearest family Hub or children’s centre.</span>
+      </a>
+    </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  
+  
+  
+{% endblock %}
+
+
+
+
+
+
