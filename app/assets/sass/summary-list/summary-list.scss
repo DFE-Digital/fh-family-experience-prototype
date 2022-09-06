@@ -1,0 +1,144 @@
+.govuk-heading-m, a {
+  -webkit-font-smoothing: antialiased;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+a {
+  text-decoration: underline max(1px, .0625rem);
+  text-underline-offset: .1em;
+}
+
+.govuk-heading-m {
+  color: #0b0c0c;
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.11111;
+  margin-top: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-heading-m {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+}
+
+.govuk-body-s, p {
+  -webkit-font-smoothing: antialiased;
+  color: #0b0c0c;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-size: 19px;
+  line-height: 1.25;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+@media (min-width: 40.0625em) {
+  p {
+    font-size: 19px;
+    line-height: 1.31579;
+    margin-bottom: 20px;
+  }
+}
+
+.govuk-body-s {
+  font-size: 16px;
+  line-height: 1.14286;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-body-s {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+a:hover {
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: max(3px, .1875rem, .12em);
+}
+
+a:focus {
+  background-color: #fd0;
+  box-shadow: #fd0 0 -2px, #0b0c0c 0 4px;
+  outline: 3px solid transparent;
+  text-decoration: none;
+}
+
+a:link {
+  color: #1d70b8;
+}
+
+a:visited {
+  color: #4c2c92;
+}
+
+a:hover {
+  color: #003078;
+}
+
+a:active {
+  color: #0b0c0c;
+}
+
+a:focus {
+  color: #0b0c0c;
+}
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-results>li {
+  border-bottom: 1px solid #b1b4b6;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.search-results dl {
+  display: flex;
+}
+
+.search-results dl dt {
+  flex-basis: 30%;
+}
+
+.search-results dl dd {
+  flex-basis: 70%;
+}
+
+.search-results>li:first-child {
+  border-top: 1px solid #b1b4b6;
+  padding-top: 15px;
+}
+
+.govuk-\!-margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-\!-margin-bottom-0 {
+    margin-bottom: 0 !important;
+  }
+}
+
+.govuk-\!-font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.dtmargins {
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+}
+
+html {
+  font-size: 16px;
+  /* This is IMPORTANT since some copied values use "REM" units */
+}
