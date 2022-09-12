@@ -38,8 +38,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-        Sorry, services in your area are not listed yet.
-      </h1>
+        No results</h1>
+       <p>Sorry, services in your area are not listed yet.</h1>
+      
      
     </div>
   </div>
@@ -50,6 +51,8 @@
       <p class="govuk-body">You can also try another postcode.</p>
     </div>
   </div>
+
+  <form action="categories-of-services" method="post">  
 
   {{ govukInput({
     label: {
@@ -62,7 +65,12 @@
     classes: "govuk-input--width-10",
     value: data['postcode-services']
   }) }}
+
+  {{ govukButton({
+    html: "Search again"
+  }) }}
   
+  </form>
 {% endblock %}
 
 
