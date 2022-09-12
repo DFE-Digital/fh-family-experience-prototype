@@ -46,9 +46,22 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body" style="display: inline-block;">Please <a href="https://www.gov.uk/find-local-council" class="govuk-link">check your council’s website </a>for your local family support services and groups. You can also try another postcode or category.</p>   
+      <p class="govuk-body" style="display: inline-block;">Please <a href="https://www.gov.uk/find-local-council" class="govuk-link">check your council’s website </a>for your local family support services and groups.</p>
+      <p class="govuk-body">You can also try another postcode.</p>
     </div>
   </div>
+
+  {{ govukInput({
+    label: {
+      text: "Enter postcode",
+      classes: "govuk-label--s",
+      isPageHeading: false
+    },
+    id: "postcode-services",
+    name: "postcode-services",
+    classes: "govuk-input--width-10",
+    value: data['postcode-services']
+  }) }}
   
 {% endblock %}
 
