@@ -41,7 +41,7 @@
       What type of service would you like?
     </h1>
 
-    <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 1 of 3</span> -->
+    <span class="govuk-caption-m govuk-!-margin-bottom-2">You have selected {{ data['categories-of-services'] }}.</span>
     <form action="find-services-group-results" method="post">  
 
     {{ govukRadios({
@@ -55,7 +55,7 @@
         }
       },
       hint: {
-        html: "You have selected data " + data['categories-of-services']+ "." + "<br>" + "Choose a category." 
+        html: "Choose a category." 
       },
       items: [
         {
