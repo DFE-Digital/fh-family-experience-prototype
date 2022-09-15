@@ -44,11 +44,11 @@
     </h1>
 
     
-    <form action="/" method="post">  
+    <form action="/" method="post" novalidate data-validate='my-form-validation'>  
 
     {{ govukRadios({
       idPrefix: "categories-of-services",
-      name: "categories-of-services",
+      name: "what-type-of-services",
       fieldset: {
         legend: {
           text: "",
@@ -100,7 +100,41 @@
 
 
 
+  <script type="application/json" id="my-form-validation">
 
+    { 		
+      "what-type-of-services": {
+        "presence": true
+      }, 	
+      "contact-by-email": {
+        "conditionallyRequired": {
+          "dependentOn": {
+            "name": "how-contacted",
+            "value": "email"
+          },
+          "message": "^Please enter an email"
+        }
+      },
+      "contact-by-phone": {
+        "conditionallyRequired": {
+          "dependentOn": {
+            "name": "how-contacted",
+            "value": "phone"
+          },
+          "message": "^Please enter a phone number"
+        }
+      },
+      "contact-by-text": {
+        "conditionallyRequired": {
+          "dependentOn": {
+            "name": "how-contacted",
+            "value": "text"
+          },
+          "message": "^Please enter your mobile phone number"
+        }
+      }
+    }
+  </script>
   
   
 {% endblock %}

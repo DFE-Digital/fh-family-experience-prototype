@@ -42,11 +42,11 @@
     </h1>
 
     <span class="govuk-caption-m govuk-!-margin-bottom-2">You have selected {{ data['categories-of-services'] }}.</span>
-    <form action="find-services-group-results" method="post">  
+    <form action="find-services-group-results" method="post" novalidate data-validate='my-form-validation'>  
 
     {{ govukRadios({
       idPrefix: "categories-of-services-2",
-      name: "categories-of-services-2",
+      name: "subcategories",
       fieldset: {
         legend: {
           text: "",
@@ -89,7 +89,41 @@
   </div>
 
 
+  <script type="application/json" id="my-form-validation">
 
+    { 		
+      "subcategories": {
+        "presence": true
+      }, 	
+      "contact-by-email": {
+        "conditionallyRequired": {
+          "dependentOn": {
+            "name": "how-contacted",
+            "value": "email"
+          },
+          "message": "^Please enter an email"
+        }
+      },
+      "contact-by-phone": {
+        "conditionallyRequired": {
+          "dependentOn": {
+            "name": "how-contacted",
+            "value": "phone"
+          },
+          "message": "^Please enter a phone number"
+        }
+      },
+      "contact-by-text": {
+        "conditionallyRequired": {
+          "dependentOn": {
+            "name": "how-contacted",
+            "value": "text"
+          },
+          "message": "^Please enter your mobile phone number"
+        }
+      }
+    }
+  </script>
 
   
   

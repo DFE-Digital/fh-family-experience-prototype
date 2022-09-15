@@ -45,8 +45,8 @@
         
       <p>You can search here to find family hubs near you.</p>  
        
-      <form action="family-hub-results" method="post">  
-
+      <form action="family-hub-results" method="post" novalidate data-validate='my-form-validation'>  
+    
         {{ govukInput({
           label: {
             text: "Enter postcode",
@@ -63,15 +63,25 @@
         {{ govukButton({
           html: "Continue"
         }) }}
+        
   
     </form>
 
     </div>
   </div>
 
-
+  <script type="application/json" id="my-form-validation">
+    {
+      "postcode-hub": {
+        "presence": {
+          "message": "^Enter your postcode"
+        }
+      }
+    }
+  </script>
 
 {% endblock %}
+
 
 
 

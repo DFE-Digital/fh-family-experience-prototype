@@ -18,7 +18,6 @@ router.post('/check-answers', function (req, res) {
   }
 })
 
-// My routes for MVP 1
 
 
 
@@ -32,5 +31,6 @@ router.post('/check-answers', function (req, res) {
 
 
 // Add your routes here - above the module.exports line
+router.use('/node_modules', express.static('node_modules'))
 
 module.exports = router
