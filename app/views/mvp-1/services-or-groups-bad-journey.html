@@ -37,40 +37,45 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-        No results</h1>
-       <p>Sorry, services in your area are not listed yet.</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">No results</h1>
+      <p class="govuk-!-margin-bottom-2">Sorry, no results for:</p>
+      <span class="govuk-caption-m govuk-!-margin-bottom-4"><a href="find-services-overview" class="govuk-link">{{ data['postcode-services'] }}</a> <br> <a href="categories-of-services" class="govuk-link">{{ data['what-type-of-services'] }}</a><br> <a href="categories-of-services" class="govuk-link">{{ data['subcategories'] }}</a></span>
       
      
-    </div>
-  </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body" style="display: inline-block;">Please <a href="https://www.gov.uk/find-local-council" class="govuk-link">check your council’s website </a> for your local family support services and groups.</p>
-      <p class="govuk-body">You can also try another postcode or search for another type of service.</p>
-    </div>
-  </div>
 
-  <form action="categories-of-services" method="post">  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">You can change your search criteria or try another postcode.</p>
+        </div>
+      </div>
 
-  {{ govukInput({
-    label: {
-      text: "Enter postcode",
-      classes: "govuk-label--s",
-      isPageHeading: false
-    },
-    id: "postcode-services",
-    name: "postcode-services",
-    classes: "govuk-input--width-10",
-    value: data['postcode-services']
-  }) }}
+      <form action="categories-of-services" method="post">  
 
-  {{ govukButton({
-    html: "Search again"
-  }) }}
+      {{ govukInput({
+        label: {
+          text: "Enter postcode",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        id: "postcode-services",
+        name: "postcode-services",
+        classes: "govuk-input--width-10",
+        value: data['postcode-services']
+      }) }}
+
+      {{ govukButton({
+        html: "Search again"
+      }) }}
+
   
-  </form>
+      </form>
+
+    
+      <p class="govuk-body" style="display: inline-block;">You can also <a href="https://www.gov.uk/find-local-council" class="govuk-link">check your council’s website </a> for your local family support services and groups.</p>
+
+    </div>
+  </div>
 {% endblock %}
 
 
