@@ -93,33 +93,8 @@
 
     { 		
       "subcategories": {
-        "presence": true
-      }, 	
-      "contact-by-email": {
-        "conditionallyRequired": {
-          "dependentOn": {
-            "name": "how-contacted",
-            "value": "email"
-          },
-          "message": "^Please enter an email"
-        }
-      },
-      "contact-by-phone": {
-        "conditionallyRequired": {
-          "dependentOn": {
-            "name": "how-contacted",
-            "value": "phone"
-          },
-          "message": "^Please enter a phone number"
-        }
-      },
-      "contact-by-text": {
-        "conditionallyRequired": {
-          "dependentOn": {
-            "name": "how-contacted",
-            "value": "text"
-          },
-          "message": "^Please enter your mobile phone number"
+        "presence": {
+          "message": "^You need to choose a type of service Click on a category from the list"
         }
       }
     }
