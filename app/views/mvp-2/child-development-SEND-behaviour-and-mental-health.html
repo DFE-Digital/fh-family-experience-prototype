@@ -1,0 +1,102 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hubs"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="categories-of-services">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m govuk-!-margin-bottom-2">Step 2 of 2</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      What type of service would you like?
+    </h1>
+
+    <span class="govuk-caption-m govuk-!-margin-bottom-2">You have selected <a href="categories-of-services">{{ data['what-type-of-services'] }}.</a></span>
+    <form action="find-services-group-or-hubs" method="post">  
+
+    {{ govukRadios({
+      idPrefix: "categories-of-services-2",
+      name: "subcategories",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        html: "Choose a category." 
+      },
+      items: [
+        {
+          value: "child development clinics",
+          text: "Child development clinics"
+        },
+        {
+          value: "special educational needs and disabilities (SEND) services",
+          text: "Special educational needs and disabilities (SEND) services"
+        },
+        {
+          value: "children’s behaviour help and advice",
+          text: "Children’s behaviour help and advice"
+        },
+        {
+          value: "children’s mental health services",
+          text: "Children’s mental health services"
+        }
+      ]
+    }) }}
+    
+ 
+
+    <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+      Continue
+    </button>
+
+    </form> 
+
+    </div>
+  </div>
+
+
+
+
+  
+  
+{% endblock %}
+
+
+
+
+
+

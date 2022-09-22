@@ -1,0 +1,121 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: "",
+  navigation: [
+    {
+      href: "family-hub",
+      text: "Family hubs"
+    },
+    {
+      href: "find-services-overview",
+      text: "Services or groups",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="home">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-m govuk-!-margin-bottom-2">Step 1 of 2</span>
+    
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      What type of service would you like?
+    </h1>
+
+    
+    <form action="/" method="post" novalidate data-validate='my-form-validation'>  
+
+    {{ govukRadios({
+      idPrefix: "categories-of-services",
+      name: "what-type-of-services",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "pregnancy, birth and postnatal~/mvp-2/pregnancy-birth-and-postnatal",
+          text: "Pregnancy, birth and postnatal"
+        },
+        {
+          value: "caring for your child, for example sleep, food or health~/mvp-2/caring-for-your-child-sleep",
+          text: "Caring for your child, for example sleep, food or health"
+        },
+        {
+          value: "child development, SEND, behaviour and mental health~/mvp-2/child-development-SEND-behaviour-and-mental-health",
+          text: "Child development, SEND, behaviour and mental health"
+        },
+        {
+          value: "teenagers and young people~/mvp-2/teenagers-and-young-people",
+          text: "Teenagers and young people"
+        },
+        {
+          value: "family and carer support, for example relationships or money~/mvp-2/family-and-carer-support-relationships-money-and-more",
+          text: "Family and carer support, for example relationships or money"
+        },
+        {
+          value: "groups, classes and workshops~/mvp-2/groups-classes-and-workshops",
+          text: "Groups, classes and workshops"
+        }
+      ]
+    }) }}
+    
+
+ 
+  
+
+    <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+      Continue
+    </button>
+
+    </form> 
+
+    
+    </div>
+  </div>
+
+
+
+  <script type="application/json" id="my-form-validation">
+
+    { 		
+      "what-type-of-services": {
+        "presence": {
+          "message": "^Choose a category from the list"
+        }
+      }
+    }
+  </script>
+  
+  
+{% endblock %}
+
+
+
+
+
+
