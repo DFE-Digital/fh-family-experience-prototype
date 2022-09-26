@@ -42,8 +42,8 @@
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
         Find services or groups 
       </h1>
-
-      <p>You can search for support from services and groups, such as: </p>
+      <p>Services and groups run at different places, like family hubs, children’s centres, community centres and health clinics.</p>
+      <p>Search here for support from services and groups, such as:</p>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>special educational needs and disabilities (SEND) support</li>
@@ -76,7 +76,13 @@
       }) }}
 
     </form> 
+    <p>As this service is new, not all local authority services will be listed.</p>
+    <p>As this service is new, not all local authority services will be listed. 
+      If there are no services or groups listed in your area, you will be signposted to your council website.</p>
 
+      {{ govukInsetText({
+        text: "Some services are only available to local residents."
+      }) }}
     </div>
   </div>
 
