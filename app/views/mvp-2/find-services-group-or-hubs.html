@@ -131,7 +131,7 @@
               <fieldset class="govuk-fieldset">
       
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                  Type of service
+                  Show
                 </legend>
       
                 {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -149,17 +149,17 @@
                   },
                   items: [
                     {
+                      value: "both",
+                      text: "Both",
+                      checked: true
+                    },
+                    {
                       value: "family-hubs",
                       text: "Family hubs"
                     },
                     {
                       value: "services-and-groups",
                       text: "Services and groups"
-                    },
-                    {
-                      value: "both",
-                      text: "Both",
-                      checked: true
                     }
                   ]
                 }) }}
