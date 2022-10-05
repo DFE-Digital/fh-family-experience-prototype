@@ -39,22 +39,11 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">No results found</h1>
       <p class="govuk-!-margin-bottom-4">Sorry, there are no results for <a href="categories-of-services" class="govuk-link">{{ data['what-type-of-services'] }}</a> in <a href="find-services-overview" class="govuk-link">{{ data['postcode-services'] }}</a> listed yet.</p>
-      <!-- <span class="govuk-caption-m govuk-!-margin-bottom-4"><a href="find-services-overview" class="govuk-link">{{ data['postcode-services'] }}</a> <br> <a href="categories-of-services" class="govuk-link">{{ data['what-type-of-services'] }}</a><br> <a href="categories-of-services" class="govuk-link">{{ data['subcategories'] }}</a></span> -->
       
-        <p class="govuk-body">You can:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            search again with another postcode 
-          </li>
-          <li>
-            search for another<a href="categories-of-services"> service or group</a> 
-          </li>
-          <li>
-            <a href="https://www.gov.uk/find-local-council" class="govuk-link">check your council’s website </a>for your local family support services and groups
-          </li>
-        </ul>
+      <p>You can <a href="https://www.gov.uk/find-local-council">check your council’s website</a> for your local family support services and groups.</p>
 
-      <form action="categories-of-services" method="post">  
+  
+      <!-- <form action="categories-of-services" method="post">  
 
       {{ govukInput({
         label: {
@@ -73,7 +62,7 @@
       }) }}
 
   
-      </form>
+      </form> -->
 
     
       <!-- <p class="govuk-body" style="display: inline-block;">You can also <a href="https://www.gov.uk/find-local-council" class="govuk-link">check your council’s website </a> for your local family support services and groups.</p> -->
