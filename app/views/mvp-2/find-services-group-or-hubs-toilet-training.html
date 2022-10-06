@@ -1,0 +1,619 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: ""
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 2 of 3</span> -->
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Your local family hubs, services and groups 
+      </h1>
+
+      <p>On this page you will see your nearest family hub at the top. At your family hub you can drop in, meet others and find out what services and activities are available in your area.</p> 
+        
+        <p>Listings also show the nearest services, support or groups you have searched for. These may take place at different locations, like family hubs, children’s centres or community centres.
+        
+      </p>
+      
+      <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for <a href="home" class="govuk-link">{{ data['postcode-services'] }}</a></span> -->
+      <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for:<br> <a href="find-services-overview" class="govuk-link">{{ data['postcode-services'] }}</a> <br> <a href="categories-of-services" class="govuk-link">{{ data['what-type-of-services'] }}</a><br> <a href="categories-of-services" class="govuk-link">{{ data['subcategories'] }}</a></span>
+
+    </div>
+  </div>
+
+  <!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-4">
+      <form action="find-services-group-or-activity-results" method="post">
+       
+      </form>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Popular searches:</h3>
+      <div class="search__popular">
+        <a class="govuk-link" href="find-services-group-or-activity-results-breastfeeding-support">Breastfeeding support</a>
+        <a class="govuk-link" href="#">Child development clinic </a>
+        <a class="govuk-link" href="#">Parenting teens workshop</a>
+        <a class="govuk-link" href="#">Rhyme time</a>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      
+      <div class="moj-filter">
+
+        <div class="moj-filter__header" style="padding: 0;">
+          <!-- <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
+          </div> -->
+        <div class="moj-filter__header-action">
+
+        </div>
+      
+        </div>
+      
+        <div class="moj-filter__content">
+      
+          <div class="moj-filter__selected">
+      
+            <div class="moj-filter__selected-heading">
+       
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Filter results</h2>
+              </div>
+      
+              <div class="moj-filter__heading-action">
+                <p style="font-size: 16px"><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+              </div>
+      
+            </div>
+
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Type of service</h3>
+
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Both</a></li>
+            </ul>
+          
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Search within</h3>
+
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>20 miles</a></li>
+            </ul>
+      
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Age range</h3>
+      
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>All age groups</a></li>
+            </ul>
+      
+          </div>
+      
+          <div class="moj-filter__options">
+      
+            <button class="govuk-button" data-module="govuk-button">
+              Apply filters
+            </button>
+      
+            <!-- <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="keywords">
+                Keywords
+              </label>
+      
+              <input class="govuk-input" id="keywords" name="keywords" type="text">
+            </div> -->
+
+            <div class="govuk-form-group">
+      
+              <fieldset class="govuk-fieldset">
+      
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Show
+                </legend>
+      
+                {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                  classes: "govuk-radios--small",
+                  idPrefix: "family-hubs-services-and-groups",
+                  name: "family-hubs-services-and-groups",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "both",
+                      text: "Both",
+                      checked: true
+                    },
+                    {
+                      value: "family-hubs",
+                      text: "Family hubs"
+                    },
+                    {
+                      value: "services-and-groups",
+                      text: "Services and groups"
+                    }
+                  ]
+                }) }}
+      
+              </fieldset>
+      
+            </div>
+      
+            <div class="govuk-form-group">
+      
+              <fieldset class="govuk-fieldset">
+      
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Search within
+                </legend>
+      
+                {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                  classes: "govuk-radios--small",
+                  idPrefix: "search-within",
+                  name: "search-within",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "one-miles",
+                      text: "1 mile"
+                    },
+                    {
+                      value: "five-miles",
+                      text: "5 miles"
+                    },
+                    {
+                      value: "ten-miles",
+                      text: "10 miles"
+                    },
+                    {
+                      value: "twenty-miles",
+                      text: "20 miles",
+                      checked: true
+                    }
+                  ]
+                }) }}
+      
+              </fieldset>
+      
+            </div>
+
+      
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Age range
+                </legend>
+      
+                {{ govukRadios({
+                  classes: "govuk-radios--small",
+                  idPrefix: "age-range",
+                  name: "age-range",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "1",
+                      text: "All age groups",
+                      checked: true
+                    },
+                    {
+                      value: "2",
+                      text: "Age 0 to 5"
+                    },
+                    {
+                      value: "3",
+                      text: "Age 5 to 11"
+                    },
+                    {
+                      value: "4",
+                      text: "Age 11 to 19"
+                    },
+                    {
+                      value: "5",
+                      text: "Age 20 to 25 with SEND"
+                    }
+                  ]
+                }) }}
+      
+              </fieldset>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+      
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <form action="" method="post">
+        <div class="search__form"> 
+          <div style="width: 100%;">
+            <label class="govuk-label govuk-label--s" for="search-term">
+              What are you looking for?
+            </label>
+            <input class="govuk-input govuk-!-width-full" id="search-term" name="search-term-services" type="text">
+          </div>
+          <button class="govuk-button" data-module="govuk-button" style="margin-bottom: 3px;">
+            Search
+          </button>
+        </div>
+      </form>  -->
+
+      <div style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 5px 20px;"> 
+        <div class="highlight-wrapper">
+          <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__key">
+              <span class="govuk-caption-m">Family hub</span>
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford (0.2 miles)</h3>
+            </div>
+          </div>
+  
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Where
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Broughton Hub<br>
+                50 Rigby Street<br>
+                Salford M7 4BQ
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="tel:01617780601">0161 778 0601</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>  
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Website
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Opening hours
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Monday to Friday, 9am to 5pm
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <span class="govuk-caption-m">Service</span>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Health visitor, Healthy Child Clinic (West Team) (0.2 miles)</h3>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NHS Salford Clinical Commissioning Group
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 to 19
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Monday to Friday, 9am to 5pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Little Hulton Children’s Centre<br>
+          Longshaw Drive<br>
+          Little Hulton<br>
+          M28 0BD<br>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="tel:01612062088">0161 206 2088</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:West0-19@nca.nhs.uk">West0-19@nca.nhs.uk</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Website
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/your-health-visiting-service/">Health visiting service</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          By appointment
+        </dd>
+      </div>
+    </dl>
+  
+
+    <hr class="govuk-!-margin-bottom-4">
+    
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <span class="govuk-caption-m">Service</span>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Children’s Continence Service, Manchester (2.4 miles)</h3>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NHS Salford Clinical Commissioning Group
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 to 16 (3 to 19 with disabilities)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Tuesdays and Thursdays, 10am to 5pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Charlestown Health Centre<br>
+          Charlestown Road<br>
+          Manchester<br>
+          M9 7ED
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="tel:01617412030">0161 741 2030</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:pals@mft.nhs.uk">pals@mft.nhs.uk</a>  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Website
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://hsm.manchester.gov.uk/kb5/manchester/directory/service.page?id=yCuk8w4YqEw&directorychannel=0">Children’s Continence Service, Manchester</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          By appointment
+        </dd>
+      </div>
+    </dl>
+
+    <hr class="govuk-!-margin-bottom-4">
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <span class="govuk-caption-m">Service</span>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Health visitor, Healthy Child Clinic (Central Team) (3.1 miles)</h3>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NHS Salford Clinical Commissioning Group
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 to 19
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Monday to Friday, 9am to 5pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Langworthy Cornerstone<br>
+          451 Liverpool Street<br>
+          Salford<br>
+          M6 5QQ
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="tel:01612066081">0161 206 6081</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:Central0-19@nca.nhs.uk">Central0-19@nca.nhs.uk</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Website
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/your-health-visiting-service/">Health visiting service</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          By appointment
+        </dd>
+      </div>
+    </dl>
+
+
+   
+
+    <!-- <hr class="govuk-!-margin-bottom-4"> -->
+
+    <!-- <div class="nhsuk-action-link govuk-!-margin-top-7">
+      <a class="nhsuk-action-link__link" href="family-hub">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Find your nearest family Hub or children’s centre.</span>
+      </a>
+    </div> -->
+
+    <ul class="govuk-list govuk-!-margin-top-6">
+      <li>
+        <a href="family-hub-results-bad-journey" class="govuk-link">Bad journey</a>
+      </li>
+    </ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  
+  
+  
+{% endblock %}
+
+
+
+
+
+

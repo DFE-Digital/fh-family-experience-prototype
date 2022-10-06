@@ -31,7 +31,7 @@
     </h1>
 
     <span class="govuk-caption-m govuk-!-margin-bottom-2">You have selected <a href="categories-of-services">{{ data['what-type-of-services'] }}.</a></span>
-    <form action="find-services-group-or-hubs" method="post">  
+    <form action="/" method="post">  
 
     {{ govukRadios({
       idPrefix: "categories-of-services-2",
@@ -48,19 +48,19 @@
       },
       items: [
         {
-          value: "feeding and eating",
+          value: "feeding and eating~/mvp-2/find-services-group-or-hubs",
           text: "Feeding and eating"
         },
         {
-          value: "health and vaccinations",
+          value: "health and vaccinations~/mvp-2/find-services-group-or-hubs",
           text: "Health and vaccinations"
         },
         {
-          value: "sleep",
+          value: "sleep~/mvp-2/find-services-group-or-hubs",
           text: "Sleep"
         },
         {
-          value: "toilet training",
+          value: "toilet training~/mvp-2/find-services-group-or-hubs-toilet-training",
           text: "Toilet training"
         }
       ]
