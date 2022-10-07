@@ -20,5 +20,5 @@ $(document).ready(function () {
 // add service name to header
 const a = document.querySelector('.govuk-header__link');
 const span = document.createElement('span');
-span.textContent = 'Family Experience';
+span.textContent = 'Find local family support';
 a.append(span);
