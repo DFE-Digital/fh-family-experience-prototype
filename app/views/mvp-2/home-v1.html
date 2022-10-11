@@ -32,10 +32,15 @@
       
       <h2 class="govuk-heading-m">Find your nearest family hub</h2>
 
-      <p>Family hubs are welcoming places to go that bring together a wide range of local support, 
-        groups and services in one place for the whole family. If you’re looking for general family 
-        services and activities near you, family hubs are a good place to start. You can drop in, 
-        meet other families and find out what’s available in your area.</p> 
+      {{ govukDetails({
+        summaryText: "Family hubs",
+        text: "Family hubs are welcoming places to go that bring together a wide range of local support, 
+          groups and services in one place for the whole family. If you’re looking for general family 
+          services and activities near you, family hubs are a good place to start. You can drop in, 
+          meet other families and find out what’s available in your area."
+      }) }}
+
+     
 
       <h2 class="govuk-heading-m">Also search for a group or service</h2>
 
@@ -64,25 +69,40 @@
         
         <h2 class="govuk-heading-m">What you can look for</h2>
 
-        <p class="govuk-body">Examples of support you can find include:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>groups and classes for babies, toddlers, young people, parents and carers</li>
-        <li>support for parents and carers, such as with children's health, care and development</li>
-        <li>support for special educational needs and disabilities (SEND)</li>
-        <li>help with mental health, relationships, money or family life</li>
-      </ul>
-
-      
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Examples of support you can find include:
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>groups and classes for babies, toddlers, young people, parents and carers</li>
+              <li>support for parents and carers, such as with children's health, care and development</li>
+              <li>support for special educational needs and disabilities (SEND)</li>
+              <li>help with mental health, relationships, money or family life</li>
+            </ul>
+        </details>
 
       <h2 class="govuk-heading-m">Who can use this service</h2>
       
-      <p class="govuk-body">This service is available across England for:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>babies</li>
-        <li>children</li>
-        <li>young people up to age 19 (up to 25 with SEND)</li>
-        <li>parents and carers</li>
-      </ul>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            This service is available across England for:
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>babies</li>
+            <li>children</li>
+            <li>young people up to age 19 (up to 25 with SEND)</li>
+            <li>parents and carers</li>
+          </ul>
+        </div>
+      </details>
+
+
 
       <!-- <p>As this service is new, not all local authority services will be listed.</p> -->
 
