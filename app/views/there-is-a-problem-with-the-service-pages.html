@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: ""
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+{% endblock %}
+
+
+ 
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+      <p class="govuk-body">Try again later.</p>
+      <p class="govuk-body">You can<a class="govuk-link" href="https://www.gov.uk/find-local-council"> check your council’s website </a>for your local family support services.</p>
+    </div>
+  </div>
+{% endblock %}
+
+  
+
+
+  
+
+
+
+
+
+
