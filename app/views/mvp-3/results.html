@@ -107,12 +107,44 @@
             <div class="govuk-form-group">
       
               <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                  Categories
+                </legend>
+
+                {{ govukCheckboxes({
+                  name: "organisation",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Organisation",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "hmrc",
+                      text: "HM Revenue and Customs (HMRC)"
+                    },
+                    {
+                      value: "employment-tribunal",
+                      text: "Employment Tribunal"
+                    },
+                    {
+                      value: "MOD",
+                      text: "Ministry of Defence"
+                    },
+                    {
+                      value: "DfT",
+                      text: "Department for Transport"
+                    }
+                  ]
+                }) }}
       
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
                   Show
                 </legend>
-      
-                {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
                 {{ govukRadios({
                   classes: "govuk-radios--small",
@@ -154,7 +186,6 @@
                   Search within
                 </legend>
       
-                {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
                 {{ govukRadios({
                   classes: "govuk-radios--small",
