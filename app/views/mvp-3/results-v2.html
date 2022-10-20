@@ -94,211 +94,34 @@
 
             <div class="govuk-form-group">
       
-              <fieldset class="govuk-fieldset resul-filters">
+              <fieldset class="govuk-fieldset collapsible-filters">
+              
                 
-                
-
-                {% set pregnancyHtml %}
-                  {{ govukCheckboxes({
-                    name: "",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
-                      {
-                        value: "Childbirth-classes",
-                        text: "Childbirth classes"
-                      },
-                      {
-                        value: "Infant-feeding-support",
-                        text: "Infant feeding support"
-                      },
-                      {
-                        value: "Midwife-services",
-                        text: "Midwife-services"
-                      },
-                      {
-                        value: "Health-visitor",
-                        text: "Health visitor"
-                      }
-                    ]
-                  }) }}
-                {% endset -%}
-
-                {% set caringHtml %}
-                {{ govukCheckboxes({
-                  name: "",
-                  classes: "govuk-checkboxes--small",
-                  fieldset: {
-                    legend: {
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "Feeding and eating",
-                      text: "Feeding and eating"
-                    },
-                    {
-                      value: "Health and vaccinations",
-                      text: "Health and vaccinations"
-                    },
-                    {
-                      value: "Sleep",
-                      text: "Sleep"
-                    },
-                    {
-                      value: "Toilet training",
-                      text: "Toilet training"
-                    }
-                  ]
-                }) }}
-                {% endset -%}
-
-                {% set childHtml %}
-                  {{ govukCheckboxes({
-                    name: "",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
-                      {
-                        value: "Child development clinics",
-                        text: "Child development clinics"
-                      },
-                      {
-                        value: "Special educational needs and disabilities (SEND) services",
-                        text: "Special educational needs and disabilities (SEND) services"
-                      },
-                      {
-                        value: "Children’s behaviour help and advice",
-                        text: "Children’s behaviour help and advice"
-                      },
-                      {
-                        value: "Children’s mental health services",
-                        text: "Children’s mental health services"
-                      }
-                    ]
-                  }) }}
-                {% endset -%}
-
-                {% set teenagersHtml %}
-                  {{ govukCheckboxes({
-                    name: "",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
-                      {
-                        value: "Health and wellbeing clinics and support",
-                        text: "Health and wellbeing clinics and support"
-                      },
-                      {
-                        value: "Online safety advice",
-                        text: "Online safety advice"
-                      },
-                      {
-                        value: "Sex and relationships advice",
-                        text: "Sex and relationships advice"
-                      }
-                    ]
-                  }) }}
-                {% endset -%}
-
-                
-
-                {{ govukRadios({
-                  name: "contact",
-                  classes: "govuk-radios--small",
-                  fieldset: {
-                    legend: {
-                      text: "What type of service would you like?",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "Pregnancy-birth-and-postnatal",
-                      text: "Pregnancy, birth and postnatal",
-                      conditional: {
-                        html: pregnancyHtml
-                      }
-                    },
-                    {
-                      value: "Caring-for-your-child-for-example-sleep-food-or-health",
-                      text: "Caring for your child, for example sleep, food or health",
-                      conditional: {
-                        html: caringHtml
-                      }
-                    },
-                    {
-                      value: "Child-development-behaviour-special-educational-needs-and-disabilities-and-mental-health",
-                      text: "Child development, behaviour, special educational needs and disabilities, and mental health",
-                      conditional: {
-                        html: childHtml
-                      }
-                    },
-                    {
-                      value: "Teenagers-and-young-people",
-                      text: "Teenagers and young people",
-                      conditional: {
-                        html: teenagersHtml
-                      }
-                    },
-                    {
-                      value: "Family-and-carer-support-for-example-relationships-or-money",
-                      text: "Family and carer support, for example relationships or money",
-                      conditional: {
-                        html: familyHtml
-                      }
-                    },
-                    {
-                      value: "Groups-classes-and-workshops",
-                      text: "Groups, classes and workshops",
-                      conditional: {
-                        html: groupsHtml
-                      }
-                    }
-                  ]
-                }) }}
-
-
-                {{ govukRadios({
-                  classes: "govuk-radios--small",
-                  idPrefix: "family-hubs-services-and-groups",
-                  name: "family-hubs-services-and-groups",
-                  fieldset: {
-                    legend: {
-                      text: "Show",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "family-hubs",
-                      text: "Family hubs"
-                    },
-                    {
-                      value: "services-and-groups",
-                      text: "Services and groups"
-                    }
-                  ]
-                }) }}
+                  <div class="box">
+                    <button type="button" class="col">Collapsible</button>
+                    <div class="content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="box">
+                    <button type="button" class="col">Collapsible</button>
+                    <div class="content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="box">
+                    <button type="button" class="col">Collapsible</button>
+                    <div class="content">
+                      <p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                  <div class="box">
+                    <button type="button" class="col">Collapsible</button>
+                    <div class="content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+              
       
               </fieldset>
       
@@ -768,7 +591,22 @@
     </div>
   </div>
 
+<script>
+  var coll = document.getElementsByClassName("col");
+  var i;
 
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+</script>
 
 
 
