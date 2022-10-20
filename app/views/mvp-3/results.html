@@ -90,56 +90,186 @@
             <button class="govuk-button" data-module="govuk-button">
               Apply filters
             </button>
-      
-            <!-- <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--m" for="keywords">
-                Keywords
-              </label>
-      
-              <input class="govuk-input" id="keywords" name="keywords" type="text">
-            </div> -->
+    
 
             <div class="govuk-form-group">
       
-              <fieldset class="govuk-fieldset">
+              <fieldset class="govuk-fieldset resul-filters">
 
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                  Categories
-                </legend>
+              
+                {{ govukCheckboxes({
+                  name: "organisation",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Pregnancy, birth and postnatal",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "Childbirth-classes",
+                      text: "Childbirth classes"
+                    },
+                    {
+                      value: "Infant-feeding-support",
+                      text: "Infant feeding support"
+                    },
+                    {
+                      value: "Midwife-services",
+                      text: "Midwife-services"
+                    },
+                    {
+                      value: "Health-visitor",
+                      text: "Health visitor"
+                    }
+                  ]
+                }) }}
 
                 {{ govukCheckboxes({
                   name: "organisation",
                   classes: "govuk-checkboxes--small",
                   fieldset: {
                     legend: {
-                      text: "Organisation",
-                      isPageHeading: true,
-                      classes: "govuk-fieldset__legend--m"
+                      text: "Caring for your child, for example sleep, food or health",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
                     }
                   },
                   items: [
                     {
-                      value: "hmrc",
-                      text: "HM Revenue and Customs (HMRC)"
+                      value: "Feeding-and-eating",
+                      text: "Feeding and eating"
                     },
                     {
-                      value: "employment-tribunal",
-                      text: "Employment Tribunal"
+                      value: "Health-and-vaccinations",
+                      text: "Health and vaccinations"
                     },
                     {
-                      value: "MOD",
-                      text: "Ministry of Defence"
+                      value: "Sleep",
+                      text: "Sleep"
                     },
                     {
-                      value: "DfT",
-                      text: "Department for Transport"
+                      value: "Toilet-training",
+                      text: "Toilet training"
+                    }
+                  ]
+                }) }}
+
+                {{ govukCheckboxes({
+                  name: "organisation",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Child development, behaviour, special educational needs and disabilities, and mental health",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "Child-development-clinics",
+                      text: "Child development clinics"
+                    },
+                    {
+                      value: "Special-educational-needs-and-disabilities-SEND-services",
+                      text: "Special educational needs and disabilities (SEND) services"
+                    },
+                    {
+                      value: "Children-behaviour-help-and-advice",
+                      text: "Children’s behaviour help and advice"
+                    },
+                    {
+                      value: "Children-mental-health-services",
+                      text: "Children’s mental health services"
                     }
                   ]
                 }) }}
       
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                  Show
-                </legend>
+                {{ govukCheckboxes({
+                  name: "organisation",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Teenagers and young people",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "Health-and-wellbeing-clinics-and-support",
+                      text: "Health and wellbeing clinics and support"
+                    },
+                    {
+                      value: "Online-safety-advice",
+                      text: "Online safety advice"
+                    },
+                    {
+                      value: "Sex-and-relationships-advice",
+                      text: "Sex and relationships advice"
+                    }
+                  ]
+                }) }}
+
+                {{ govukCheckboxes({
+                  name: "organisation",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Family and carer support, for example relationships or money",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "Benefits-and-finances",
+                      text: "Benefits and finances"
+                    },
+                    {
+                      value: "Parenting-relationships-and-family-life",
+                      text: "Parenting, relationships and family life"
+                    },
+                    {
+                      value: "Parent-and-carer-mental-health-and-wellbeing",
+                      text: "Parent and carer mental health and wellbeing"
+                    }
+                  ]
+                }) }}
+
+
+                {{ govukCheckboxes({
+                  name: "organisation",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Groups, classes and workshops",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "Baby-groups-and-playgroups",
+                      text: "Baby groups and playgroups"
+                    },
+                    {
+                      value: "Youth-clubs-and-activities",
+                      text: "Youth clubs and activities"
+                    },
+                    {
+                      value: "Special-educational-needs-and-disabilities-SEND-groups",
+                      text: "Special educational needs and disabilities (SEND) groups"
+                    },
+                    {
+                      value: "Parenting-workshops-in-person-or-online",
+                      text: "Parenting workshops, in person or online"
+                    }
+                  ]
+                }) }}
+              
 
                 {{ govukRadios({
                   classes: "govuk-radios--small",
@@ -147,9 +277,9 @@
                   name: "family-hubs-services-and-groups",
                   fieldset: {
                     legend: {
-                      text: "",
+                      text: "Show",
                       isPageHeading: false,
-                      classes: "govuk-fieldset__legend--m"
+                      classes: "govuk-fieldset__legend--s"
                     }
                   },
                   items: [
