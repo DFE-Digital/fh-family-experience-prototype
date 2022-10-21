@@ -20,11 +20,15 @@ router.post('/check-answers', function (req, res) {
 
 
 
+router.post('/results', function (req, res) {
+  const isItchecked = req.session.data['category']
 
-
-
-
-
+  if (isItchecked.includes('category') ){
+    res.redirect('/mvp-3/results-v3-infant')
+  } else {
+    res.redirect('/mvp-3/result-2')
+  }
+})
 
 
 
