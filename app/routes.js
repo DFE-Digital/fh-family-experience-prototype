@@ -26,7 +26,7 @@ router.post('/results', function (req, res) {
   if (isItchecked.includes('category') ){
     res.redirect('/mvp-3/results-v3-infant')
   } else {
-    res.redirect('/mvp-3/result-2')
+    res.redirect('/mvp-3/results-v3')
   }
 })
 
