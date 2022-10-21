@@ -9,13 +9,13 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
   window.MOJFrontend.initAll()
 
-  let selectElement = document.querySelector('#search-term')
+ /* let selectElement = document.querySelector('#search-term')
 
   accessibleAutocomplete.enhanceSelectElement({
   defaultValue: '',
   selectElement: selectElement
 })
-})
+})*/
 
 // add service name to header
 const a = document.querySelector('.govuk-header__link');

@@ -84,301 +84,229 @@
             </ul>
       
           </div>
-      
-          <div class="moj-filter__options">
-      
-            <button class="govuk-button" data-module="govuk-button">
-              Apply filters
-            </button>
-    
 
-            <div class="govuk-form-group">
+          <form action="/" method="post" novalidate data-validate='my-form-validation'>
+            <div class="moj-filter__options">
+        
+              <button class="govuk-button" data-module="govuk-button">
+                Apply filters
+              </button>
       
-              <fieldset class="govuk-fieldset resul-filters">
+              <div class="govuk-form-group">
+        
+                <fieldset class="govuk-fieldset resul-filters">
 
-                <div class="filters-component__groups">
-                  <div class="filters-component__groups__group" data-filters-target="group" data-group="subjects">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h3 class="govuk-fieldset__heading">Category</h3></legend>
-                    <div>
-                      <div class="searchable-collection-component" data-controller="searchable-collection">
-                        <div class=" searchable-collection-component--scrollable">
-                          <div class="searchable-collection-component__search">
-                            <input
-                                  aria-describedby="publishers-job-listing-job-details-form-subjects-hint" aria-expanded="true"
-                                  aria-label="Subject" aria-owns="subjects__listbox"
-                                  class="govuk-input icon icon--left icon--search js-action" id="filter"
-                                  placeholder="Search" role="combobox">
-                            <div aria-live="assertive" class="govuk-visually-hidden collection-match" role="status"></div>
-                          </div>
-                          <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset">
-                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                <input type="hidden" name="subjects[]" value="" autocomplete="off">
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Activities for children aged 0-5
-                                  </label>
+                  <div class="filters-component__groups">
+                    <div class="filters-component__groups__group" data-filters-target="group" data-group="subjects">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h3 class="govuk-fieldset__heading">Category</h3></legend>
+                      <div>
+                        <div class="searchable-collection-component" data-controller="searchable-collection">
+                          <div class=" searchable-collection-component--scrollable">
+                            <div class="searchable-collection-component__search">
+                              <input
+                                    aria-describedby="publishers-job-listing-job-details-form-subjects-hint" aria-expanded="true"
+                                    aria-label="Subject" aria-owns="subjects__listbox"
+                                    class="govuk-input icon icon--left icon--search js-action" id="filter"
+                                    placeholder="Search" role="combobox">
+                              <div aria-live="assertive" class="govuk-visually-hidden collection-match" role="status"></div>
+                            </div>
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                  <input type="hidden" name="subjects[]" value="" autocomplete="off">
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Activities, clubs and groups
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Advice and support
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Health
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="~/mvp-2/child-development-SEND-behaviour-and-mental-health">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Parent and carer support
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Pregnancy, birth and early years
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Special educational needs and disabilities (SEND)
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Transport
+                                    </label>
+                                  </div>
+                                  <div class="govuk-checkboxes__item" id="filterable">
+                                    <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="types">
+                                      Youth services
+                                    </label>
+                                  </div>
                                 </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Birth registration
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Debt and welfare advice
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Domestic abuse support
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Early Childhood Education and Care (ECEC) and financial support (Tax-Free Childcare, Universal Credit childcare)
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Early Language and the Home Learning Environment
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Health Visiting
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Housing
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Infant Feeding Support
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Intensive targeted family support services, including those funded by the Supporting Families programme
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Local authority 0-19 public health services, based on local needs assessments
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Mental health services (beyond Start for Life parent-infant mental health)
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Midwifery/maternity
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Nutrition and weight management
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Oral health improvement
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Parent-Infant Relationships and Perinatnatal Mental Health Support
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Parenting Support
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Reducing Parental Conflict
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    SEND support and services (inclusive of the Start for Life period)
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Stop smoking support
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Substance (alcohol/drug) misuse support
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Support for separating and separated parents
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Youth justice services
-                                  </label>
-                                </div>
-                                <div class="govuk-checkboxes__item" id="filterable">
-                                  <input class="govuk-checkboxes__input" id="types" name="types[]" type="checkbox" value="">
-                                  <label class="govuk-label govuk-checkboxes__label" for="types">
-                                    Youth services - universal and targeted
-                                  </label>
-                                </div>
-                              </div>
-                            </fieldset>
+                              </fieldset>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                    
                   
-                
+                  </div>
+
+        
+                </fieldset>
+
+                <div class="govuk-fieldset border-bottom" style="padding: 20px 0 10px 0;">
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "family-hubs-services-and-groups",
+                    name: "family-hubs-services-and-groups",
+                    fieldset: {
+                      legend: {
+                        text: "Show",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "family-hubs",
+                        text: "Family hubs"
+                      },
+                      {
+                        value: "services-and-groups",
+                        text: "Services and groups"
+                      }
+                    ]
+                  }) }}
                 </div>
+        
+              </div>
+        
+              <div class="govuk-form-group">
+        
+                <fieldset class="govuk-fieldset border-bottom" style="padding-bottom: 10px;">
+        
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                    Search within
+                  </legend>
+        
 
-              
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "search-within",
+                    name: "search-within",
+                    fieldset: {
+                      legend: {
+                        text: "",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "one-miles",
+                        text: "1 mile"
+                      },
+                      {
+                        value: "two-miles",
+                        text: "2 miles"
+                      },
+                      {
+                        value: "five-miles",
+                        text: "5 miles"
+                      },
+                      {
+                        value: "ten-miles",
+                        text: "10 miles"
+                      },
+                      {
+                        value: "twenty-miles",
+                        text: "20 miles",
+                        checked: true
+                      }
+                    ]
+                  }) }}
+        
+                </fieldset>
+        
+              </div>
 
-      
-              </fieldset>
-      
+        
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                    Age range
+                  </legend>
+        
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "age-range",
+                    name: "age-range",
+                    fieldset: {
+                      legend: {
+                        text: "",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "1",
+                        text: "All age groups",
+                        checked: true
+                      },
+                      {
+                        value: "2",
+                        text: "Age 0 to 5"
+                      },
+                      {
+                        value: "3",
+                        text: "Age 5 to 11"
+                      },
+                      {
+                        value: "4",
+                        text: "Age 11 to 19"
+                      },
+                      {
+                        value: "5",
+                        text: "Age 20 to 25 with SEND"
+                      },
+                      {
+                        value: "parents and carers",
+                        text: "Parents and carers"
+                      }
+                    ]
+                  }) }}
+        
+                </fieldset>
+        
+              </div>
+        
             </div>
-      
-            <div class="govuk-form-group">
-      
-              <fieldset class="govuk-fieldset border-bottom" style="padding-bottom: 10px;">
-      
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                  Search within
-                </legend>
-      
+          </form>
 
-                {{ govukRadios({
-                  classes: "govuk-radios--small",
-                  idPrefix: "search-within",
-                  name: "search-within",
-                  fieldset: {
-                    legend: {
-                      text: "",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--m"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "one-miles",
-                      text: "1 mile"
-                    },
-                    {
-                      value: "two-miles",
-                      text: "2 miles"
-                    },
-                    {
-                      value: "five-miles",
-                      text: "5 miles"
-                    },
-                    {
-                      value: "ten-miles",
-                      text: "10 miles"
-                    },
-                    {
-                      value: "twenty-miles",
-                      text: "20 miles",
-                      checked: true
-                    }
-                  ]
-                }) }}
-      
-              </fieldset>
-      
-            </div>
-
-      
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                  Age range
-                </legend>
-      
-                {{ govukRadios({
-                  classes: "govuk-radios--small",
-                  idPrefix: "age-range",
-                  name: "age-range",
-                  fieldset: {
-                    legend: {
-                      text: "",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--m"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "1",
-                      text: "All age groups",
-                      checked: true
-                    },
-                    {
-                      value: "2",
-                      text: "Age 0 to 5"
-                    },
-                    {
-                      value: "3",
-                      text: "Age 5 to 11"
-                    },
-                    {
-                      value: "4",
-                      text: "Age 11 to 19"
-                    },
-                    {
-                      value: "5",
-                      text: "Age 20 to 25 with SEND"
-                    },
-                    {
-                      value: "parents and carers",
-                      text: "Parents and carers"
-                    }
-                  ]
-                }) }}
-      
-              </fieldset>
-      
-            </div>
-      
-          </div>
-      
         </div>
       
       </div>
@@ -765,16 +693,6 @@
     filterEl.addEventListener('keyup', () => handler.call(null, filterEl.value));
   });
 
-  function displayFilters() {
-    $("#filters-component").toggle();
-    $("#buttonFilters").toggle();
-    $("#buttonFilters2").toggle();
-  }
-  function hideFilters() {
-    $("#filters-component").toggle();
-    $("#buttonFilters2").toggle();
-    $("#buttonFilters").toggle();
-  }
 </script>
 {% endblock %}
 
