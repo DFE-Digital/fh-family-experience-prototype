@@ -91,7 +91,7 @@
       
           </div>
 
-          <form action="/results" method="post" novalidate data-validate='my-form-validation'>
+          <form action="/results-v3" method="post" novalidate data-validate='my-form-validation'>
             <div class="moj-filter__options">
         
               <button class="govuk-button" data-module="govuk-button">
@@ -100,6 +100,7 @@
       
               <div class="govuk-form-group">
         
+                
                 <fieldset class="govuk-fieldset resul-filters">
 
                   <div class="filters-component__groups">
@@ -121,7 +122,7 @@
                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                   <input type="hidden" name="category" value="" autocomplete="off">
                                   <div class="govuk-checkboxes__item" id="filterable">
-                                    <input class="govuk-checkboxes__input" id="types" name="category" type="checkbox" value="category">
+                                    <input class="govuk-checkboxes__input" id="types" name="category" type="checkbox" value="">
                                     <label class="govuk-label govuk-checkboxes__label" for="types">
                                       Activities, clubs and groups
                                     </label>
@@ -145,7 +146,7 @@
                                     </label>
                                   </div>
                                   <div class="govuk-checkboxes__item" id="filterable">
-                                    <input class="govuk-checkboxes__input" id="types" name="category" type="checkbox" value="">
+                                    <input class="govuk-checkboxes__input" id="types" name="category" type="checkbox" value="infant">
                                     <label class="govuk-label govuk-checkboxes__label" for="types">
                                       Pregnancy, birth and early years
                                     </label>
@@ -163,7 +164,7 @@
                                     </label>
                                   </div>
                                   <div class="govuk-checkboxes__item" id="filterable">
-                                    <input class="govuk-checkboxes__input" id="types" name="category" type="checkbox" value="">
+                                    <input class="govuk-checkboxes__input" id="types" name="category" type="checkbox" value="youth">
                                     <label class="govuk-label govuk-checkboxes__label" for="types">
                                       Youth services
                                     </label>

@@ -6,31 +6,27 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 
-// Run this code when a form is submitted to 'check-answers'
-router.post('/check-answers', function (req, res) {
+// router.post('/results', function (req, res) {
+//   const isItchecked = req.session.data['category']
 
-  if (req.session.data['dob-year'] >= "1990"){
-    // Send user to next page
-    res.redirect('too-young');
-  } else {
-    // Send user to ineligible page
-    res.redirect('check-answers');
-  }
-})
+//   if (isItchecked.includes('category') ){
+//     res.redirect('/mvp-3/results-v3-infant')
+//   } else {
+//     res.redirect('/mvp-3/results-v3')
+//   }
+// })
 
+router.post('/results-v3', function (req, res) {
+  const checkedValues = req.session.data['category']
 
-
-router.post('/results', function (req, res) {
-  const isItchecked = req.session.data['category']
-
-  if (isItchecked.includes('category') ){
+  if (checkedValues.includes('infant') ){
     res.redirect('/mvp-3/results-v3-infant')
+  } else if (checkedValues.includes('youth')) {
+    res.redirect('/mvp-3/results-v3-youth-services')
   } else {
     res.redirect('/mvp-3/results-v3')
   }
 })
-
-
 
 
 
