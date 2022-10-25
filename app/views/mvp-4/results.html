@@ -350,10 +350,10 @@
                 </fieldset>
 
                 <div class="border-bottom" style="padding: 20px 0 10px 0;">
-                  {{ govukRadios({
-                    classes: "govuk-radios--small",
-                    idPrefix: "family-hubs-services-and-groups",
-                    name: "family-hubs-services-and-groups",
+
+                  {{ govukCheckboxes({
+                    name: "",
+                    classes: "govuk-checkboxes--small",
                     fieldset: {
                       legend: {
                         text: "Cost",
@@ -375,10 +375,11 @@
                 </div>
 
                 <div class="border-bottom" style="padding: 20px 0 10px 0;">
-                  {{ govukRadios({
-                    classes: "govuk-radios--small",
-                    idPrefix: "family-hubs-services-and-groups",
-                    name: "family-hubs-services-and-groups",
+                  
+
+                  {{ govukCheckboxes({
+                    name: "",
+                    classes: "govuk-checkboxes--small",
                     fieldset: {
                       legend: {
                         text: "Show",
@@ -388,17 +389,16 @@
                     },
                     items: [
                       {
-                        value: "family-hubs",
+                        value: "",
                         text: "Family hubs"
                       },
                       {
-                        value: "services-and-groups",
+                        value: "",
                         text: "Services and groups"
                       }
                     ]
                   }) }}
                 </div>
-      
         
                 <fieldset class="govuk-fieldset border-bottom" style="padding-bottom: 10px;">
         
@@ -449,53 +449,49 @@
 
         
               <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+                <div class="govuk-fieldset">
 
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                    Age range
-                  </legend>
-        
-                  {{ govukRadios({
-                    classes: "govuk-radios--small",
-                    idPrefix: "age-range",
-                    name: "age-range",
+                
+                  {{ govukCheckboxes({
+                    name: "organisation",
+                    classes: "govuk-checkboxes--small",
                     fieldset: {
                       legend: {
-                        text: "",
+                        text: "Age range",
                         isPageHeading: false,
-                        classes: "govuk-fieldset__legend--m"
+                        classes: "govuk-fieldset__legend--s"
                       }
                     },
                     items: [
                       {
-                        value: "1",
+                        value: "",
                         text: "All age groups",
                         checked: true
                       },
                       {
-                        value: "2",
+                        value: "",
                         text: "Age 0 to 5"
                       },
                       {
-                        value: "3",
+                        value: "",
                         text: "Age 5 to 11"
                       },
                       {
-                        value: "4",
+                        value: "",
                         text: "Age 11 to 19"
                       },
                       {
-                        value: "5",
+                        value: "",
                         text: "Age 20 to 25 with SEND"
                       },
                       {
-                        value: "parents and carers",
+                        value: "",
                         text: "Parents and carers"
                       }
                     ]
                   }) }}
         
-                </fieldset>
+                </div>
         
               </div>
         
