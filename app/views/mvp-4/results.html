@@ -1,0 +1,874 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: ""
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+  <a class="govuk-back-link" href="enter-postcode">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 2 of 3</span> -->
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Your local family hubs, services and activities 
+      </h1>
+      
+      <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for: <a href="enter-postcode.html" class="govuk-link">{{ data['postcode-services'] }}</a> 
+
+    </div>
+  </div>
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      
+      <div class="moj-filter">
+
+        <div class="moj-filter__header" style="padding: 0;">
+          <!-- <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
+          </div> -->
+        <div class="moj-filter__header-action">
+
+        </div>
+      
+        </div>
+      
+        <div class="moj-filter__content">
+      
+          <div class="moj-filter__selected">
+      
+            <div class="moj-filter__selected-heading">
+       
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Filter results</h2>
+              </div>
+      
+              <div class="moj-filter__heading-action">
+                <p style="font-size: 16px"><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+              </div>
+      
+            </div>
+
+          
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Search within</h3>
+
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>20 miles</a></li>
+            </ul>
+      
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Age range</h3>
+      
+            <ul class="moj-filter-tags filters-component__remove-tags">
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>All age groups</a></li>
+            </ul>
+      
+          </div>
+
+          <form action="/results-v3" method="post" novalidate data-validate='my-form-validation'>
+            <div class="moj-filter__options">
+        
+              <button class="govuk-button" data-module="govuk-button">
+                Apply filters
+              </button>
+      
+              <div class="govuk-form-group">
+        
+                <fieldset class="govuk-fieldset resul-filters">
+
+                  <div class="filters-component__groups">
+                    <div class="filters-component__groups__group" data-filters-target="group" data-group="subjects">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h3 class="govuk-fieldset__heading">Category</h3></legend>
+                      <div>
+                        <div class="searchable-collection-component" style="margin-bottom: 20px;">
+                          <div class="searchable-collection-component--only-scrollable">
+                            
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Activities, clubs and groups",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Pre-school playgroup"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Before and after school clubs"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Parent and toddler groups"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Holiday clubs and schemes"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Activity"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Sports and recreation"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Music, arts and dance"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Youth clubs and activities"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Health",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Oral health"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Hearing and sight"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Public health services"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Nutrition and weight management"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Family support",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Substance misuse support (including alcohol and drug)"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Money matters, benefits and housing"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Bullying and cyber bullying"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Domestic abuse"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Debt and welfare advice"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Stop smoking support"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Breaks and respite"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Parenting support"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Reducing parental conflict"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Intensive targeted family support"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Separating and separated parent support"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Community transport"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Specialist transport"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Pregnancy, birth and early years support",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Early years language development and home learning environment"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Birth registration"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Infant feeding support (including breast feeding)"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Midwife and maternity"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Perinatal mental health support (pregnancy to one year post birth)"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Special educational needs and disabilities (SEND)",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Support with education"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Support outside school"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Early years support"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Healthcare and therapies"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Groups for parents and carers of children with SEND"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Youth services",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Targeted youth support services"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Youth justice services"
+                                  }
+                                ]
+                              }) }}
+                              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+        
+                </fieldset>
+
+                <div class="border-bottom" style="padding: 20px 0 10px 0;">
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "family-hubs-services-and-groups",
+                    name: "family-hubs-services-and-groups",
+                    fieldset: {
+                      legend: {
+                        text: "Cost",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "",
+                        text: "Free"
+                      },
+                      {
+                        value: "",
+                        text: "Pay to use"
+                      }
+                    ]
+                  }) }}
+                </div>
+
+                <div class="border-bottom" style="padding: 20px 0 10px 0;">
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "family-hubs-services-and-groups",
+                    name: "family-hubs-services-and-groups",
+                    fieldset: {
+                      legend: {
+                        text: "Show",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "family-hubs",
+                        text: "Family hubs"
+                      },
+                      {
+                        value: "services-and-groups",
+                        text: "Services and groups"
+                      }
+                    ]
+                  }) }}
+                </div>
+      
+        
+                <fieldset class="govuk-fieldset border-bottom" style="padding-bottom: 10px;">
+        
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" style="padding-top: 20px;"> 
+                    Search within
+                  </legend>
+        
+
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "search-within",
+                    name: "search-within",
+                    fieldset: {
+                      legend: {
+                        text: "",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "one-miles",
+                        text: "1 mile"
+                      },
+                      {
+                        value: "two-miles",
+                        text: "2 miles"
+                      },
+                      {
+                        value: "five-miles",
+                        text: "5 miles"
+                      },
+                      {
+                        value: "ten-miles",
+                        text: "10 miles"
+                      },
+                      {
+                        value: "twenty-miles",
+                        text: "20 miles",
+                        checked: true
+                      }
+                    ]
+                  }) }}
+        
+                </fieldset>
+        
+              </div>
+
+        
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
+                    Age range
+                  </legend>
+        
+                  {{ govukRadios({
+                    classes: "govuk-radios--small",
+                    idPrefix: "age-range",
+                    name: "age-range",
+                    fieldset: {
+                      legend: {
+                        text: "",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "1",
+                        text: "All age groups",
+                        checked: true
+                      },
+                      {
+                        value: "2",
+                        text: "Age 0 to 5"
+                      },
+                      {
+                        value: "3",
+                        text: "Age 5 to 11"
+                      },
+                      {
+                        value: "4",
+                        text: "Age 11 to 19"
+                      },
+                      {
+                        value: "5",
+                        text: "Age 20 to 25 with SEND"
+                      },
+                      {
+                        value: "parents and carers",
+                        text: "Parents and carers"
+                      }
+                    ]
+                  }) }}
+        
+                </fieldset>
+        
+              </div>
+        
+            </div>
+          </form>
+
+        </div>
+      
+      </div>
+      
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+    
+
+    <div style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 5px 20px;"> 
+      <div class="highlight-wrapper">
+        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__key">
+            <span class="govuk-caption-m">Family hub</span>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
+          </div>
+        </div>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Broughton Hub<br>
+              50 Rigby Street<br>
+              Salford M7 4BQ
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="tel:01617780601">0161 778 0601</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>  
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Website
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Opening hours
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monday to Friday, 9am to 5pm
+            </dd> 
+          </div> 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Cost
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Free
+            </dd> 
+          </div> 
+          <div class="govuk-summary-list__row">
+            <dt style="width: 600px">
+              <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
+              and activities in your area.</p>
+
+              <a href="find-all-hubs">See more family hubs.</a>
+
+            </dt>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- <hr class="govuk-!-margin-bottom-4"> -->
+    <p style="margin-top: 20px; margin-bottom: 0px;">Listings below show the nearest services or 
+      activities you have searched for. These may take place at different locations, like 
+       family hubs, children’s centres or community centres.</p>
+    <hr class="govuk-!-margin-bottom-4 govuk-!-margin-top-4">
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <span class="govuk-caption-m govuk-!-margin-top-3">Service</span>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Be Open On Breastfeeding in Salford<span style="font-weight: 400;"> (0.3 miles)</span></h3>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Breastfeeding in Salford
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0 to 5
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Monday and Friday, 10am to 2pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+         The Bury Centre<br>
+         10 Hope Street<br>
+         Bury<br>
+         M10 4PD<br>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="tel:074268355351">0161 365 4987</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:rachel@breastfeedinginsalford.org.uk">rachel@breastfeedinginsalford.org.uk</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Website
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://www.breastfeedinginsalford.org.uk">Be Open On Breastfeeding in Salford</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Drop in
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2 every session
+        </dd>
+      </div>
+    </dl>
+  
+
+    <hr class="govuk-!-margin-bottom-4">
+    
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <span class="govuk-caption-m">Service</span>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Child and Adolescent Mental Health Services (CAMHS)<span style="font-weight: 400;"> (1.1 miles)</span></h3>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Manchester University NHS Foundation Trust
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0 to 19 (0 to 25 with SEND)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Monday to Friday, 9am to 5pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Carol Kendrick Centre<br>
+          Stratus House<br>
+          Southmoor Road<br>
+          Roundthorn Industrial Estate<br>
+          Wythenshawe<br>
+          Manchester<br>
+          M23 9XD<br>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="tel:0161 686 5260">0161 518 5400</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:cmm-tr.salford-CAMHS@nhs.net">cmm-tr.salford-CAMHS@nhs.net</a>  
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Website
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://mft.nhs.uk/rmch/services/camhs/">CAMHS</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Drop in
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Free
+        </dd>
+      </div>
+    </dl>
+
+    <hr class="govuk-!-margin-bottom-4">
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__key">
+        <span class="govuk-caption-m">Service</span>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Health visitor, Healthy Child Clinic (Central Team)<span style="font-weight: 400;"> (3.1 miles)</span></h3>
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Run by 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NHS Salford Clinical Commissioning Group
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 to 19
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Monday to Friday, 9am to 5pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Where 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Langworthy Cornerstone<br>
+          451 Liverpool Street<br>
+          Salford<br>
+          M6 5QQ<br>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="tel:0161 206 6081">0161 206 6081</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="mailto:Central0-19@nca.nhs.uk">central0-19@nca.nhs.uk</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Website
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/your-health-visiting-service/">Health visiting service</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Availability
+        </dt>
+        <dd class="govuk-summary-list__value">
+          By appointment
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Free
+        </dd>
+      </div>
+    </dl>
+
+
+    <ul class="govuk-list govuk-!-margin-top-6">
+      <li>
+        <a href="results-v3-youth-services" class="govuk-link">Youth services</a>
+      </li>
+      <li>
+        <a href="family-hub-results-bad-journey" class="govuk-link">Bad journey</a>
+      </li>
+    </ul>
+
+    </div>
+  </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -622,12 +622,15 @@ a:focus:visited {
 // Scrolable filters
 
 
-.searchable-collection-component--scrollable .govuk-form-group {
+.searchable-collection-component--scrollable .govuk-form-group,
+.searchable-collection-component--only-scrollable {
   margin-left: -10px;
   max-height: 400px;
   overflow-y: auto;
   padding-left: 10px;
+  margin-bottom: 10px;
 }
+
 
 .searchable-collection-component__search {
   background: #ffffff;

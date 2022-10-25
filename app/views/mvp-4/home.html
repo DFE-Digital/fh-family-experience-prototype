@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "home",
+  serviceName: "",
+  serviceUrl: ""
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is not a full service. It is not production code and you might experience problems.'
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+<div class="full-BGstrip">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Find local family support and services</h1>
+    
+
+      <p>You can find help, services and activities in your local area, including:</p> 
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>activities for babies, toddlers, young people, parents and carers</li>
+        <li>support for parents and carers, such as with children's health, care and development</li>
+        <li>support with special educational needs and disabilities (SEND)</li>
+        <li>help with mental health, relationships, money, housing or family life</li>
+      </ul>
+
+      <p>You can find specific types of support and search for all kinds of family services and activities run by different organisations.</p>
+      <p>You will also be able to find your nearest family hub. They offer general 
+        family services and activities in your local area, and are a great place to start looking.</p>
+      
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "enter-postcode",
+        isStartButton: true
+      }) }}
+      
+
+
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  
+{% endblock %}
+
+
+
+
+
+
