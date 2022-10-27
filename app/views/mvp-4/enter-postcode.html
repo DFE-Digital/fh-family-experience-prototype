@@ -45,7 +45,7 @@
       <p>Some services are only available to local residents.</p>
       
 
-      <form action="results" method="post" class="search__form_2">  
+      <form action="results" method="post" class="search__form_2" novalidate data-validate='my-form-validation'>  
 
         {{ govukInput({
           label: {
@@ -70,7 +70,15 @@
     </div>
   </div>
 
-  
+  <script type="application/json" id="my-form-validation">
+    {
+      "postcode-services": {
+        "presence": {
+          "message": "^You need to enter a postcode, like AA1 1AA"
+        }
+      }
+    }
+  </script>
 
 
   
