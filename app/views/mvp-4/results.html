@@ -117,6 +117,10 @@
                                 items: [
                                   {
                                     value: "",
+                                    text: "Activities"
+                                  },
+                                  {
+                                    value: "",
                                     text: "Before and after school clubs"
                                   },
                                   {
@@ -138,6 +142,10 @@
                                   {
                                     value: "",
                                     text: "Sports and recreation"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Youth clubs and activities"
                                   }
                                 ]
                               }) }}
@@ -153,6 +161,14 @@
                                   }
                                 },
                                 items: [
+                                  {
+                                    value: "",
+                                    text: "Breaks and respite"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Bullying and cyber bullying"
+                                  },
                                   {
                                     value: "",
                                     text: "Debt and welfare advice"
@@ -256,6 +272,10 @@
                                   {
                                     value: "",
                                     text: "Perinatal mental health support (pregnancy to one year post birth)"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Health visiting"
                                   }
                                 ]
                               }) }}
@@ -290,6 +310,28 @@
                                   {
                                     value: "",
                                     text: "Support with education"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Transport",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Community transport"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "Specialist transport"
                                   }
                                 ]
                               }) }}
