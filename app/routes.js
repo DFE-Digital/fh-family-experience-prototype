@@ -5,17 +5,7 @@ const router = express.Router()
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
-
-// router.post('/results', function (req, res) {
-//   const isItchecked = req.session.data['category']
-
-//   if (isItchecked.includes('category') ){
-//     res.redirect('/mvp-3/results-v3-infant')
-//   } else {
-//     res.redirect('/mvp-3/results-v3')
-//   }
-// })
-
+//MVP3
 router.post('/results-v3', function (req, res) {
   const checkedValues = req.session.data['category']
 
@@ -25,6 +15,21 @@ router.post('/results-v3', function (req, res) {
     res.redirect('/mvp-3/results-v3-youth-services')
   } else {
     res.redirect('/mvp-3/results-v3')
+  }
+})
+
+//MVP4
+router.post('/results', function (req, res) {
+  const checkedValues = req.session.data['category-2']
+
+  if (checkedValues.includes('all-hubs') ){
+    res.redirect('/mvp-4/results-all-hubs')
+  } else if (checkedValues.includes('infant-feeding')) {
+    res.redirect('/mvp-4/results-infant-feeding')
+  } else if (checkedValues.includes('targeted-support')) {
+    res.redirect('/mvp-4/results-targeted-support')
+  } else {
+    res.redirect('/mvp-4/results')
   }
 })
 
