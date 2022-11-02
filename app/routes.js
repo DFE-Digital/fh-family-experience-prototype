@@ -19,7 +19,7 @@ router.post('/results-v3', function (req, res) {
 })
 
 //MVP4
-router.post('/mvp-4/results', function (req, res) {
+router.post('/results', function (req, res) {
   const checkedValues2 = req.session.data['category-2']
 
   if (checkedValues2.includes('all-hubs') ){
@@ -29,7 +29,7 @@ router.post('/mvp-4/results', function (req, res) {
   } else if (checkedValues2.includes('targeted-support')) {
     res.redirect('/mvp-4/results-targeted-support')
   } else {
-    res.redirect('/results')
+    res.redirect('/mvp-4/results')
   }
 })
 
