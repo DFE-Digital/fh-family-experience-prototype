@@ -19,17 +19,17 @@ router.post('/results-v3', function (req, res) {
 })
 
 //MVP4
-router.post('/results', function (req, res) {
-  const checkedValues = req.session.data['category-2']
+router.post('/mvp-4/results', function (req, res) {
+  const checkedValues2 = req.session.data['category-2']
 
-  if (checkedValues.includes('all-hubs') ){
+  if (checkedValues2.includes('all-hubs') ){
     res.redirect('/mvp-4/results-all-hubs')
-  } else if (checkedValues.includes('infant-feeding')) {
+  } else if (checkedValues2.includes('infant-feeding')) {
     res.redirect('/mvp-4/results-infant-feeding')
-  } else if (checkedValues.includes('targeted-support')) {
+  } else if (checkedValues2.includes('targeted-support')) {
     res.redirect('/mvp-4/results-targeted-support')
   } else {
-    res.redirect('/mvp-4/results')
+    res.redirect('/results')
   }
 })
 
