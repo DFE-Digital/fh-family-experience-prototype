@@ -4,11 +4,11 @@
 
 {% block header %}
 
-{{ govukHeader({
-  homepageUrl: "home",
-  serviceName: "",
-  serviceUrl: ""
-}) }}
+  {{ govukHeader({
+    homepageUrl: "home",
+    serviceName: "",
+    serviceUrl: ""
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -206,7 +206,7 @@
                                     text: "Support with parenting"
                                   },
                                   {
-                                    value: "targeted-support",
+                                    value: "",
                                     text: "Targeted support and youth justice services"
                                   }
                                 ]
@@ -238,6 +238,28 @@
                                   {
                                     value: "",
                                     text: "Public health services"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Mental Health",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "To confirm"
+                                  },
+                                  {
+                                    value: "",
+                                    text: "To confirm"
                                   }
                                 ]
                               }) }}
@@ -332,6 +354,28 @@
                                   {
                                     value: "",
                                     text: "Specialist transport"
+                                  }
+                                ]
+                              }) }}
+
+                              {{ govukCheckboxes({
+                                name: "category-2",
+                                classes: "govuk-checkboxes--small",
+                                fieldset: {
+                                  legend: {
+                                    text: "Youth",
+                                    isPageHeading: false,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                                items: [
+                                  {
+                                    value: "",
+                                    text: "Justice support"
+                                  },
+                                  {
+                                    value: "targeted-support",
+                                    text: "Targeted support services"
                                   }
                                 ]
                               }) }}
