@@ -37,7 +37,9 @@
     </div>
   </div>
 
-
+  <button class="govuk-button govuk-button--secondary close-filters-btn"  data-module="govuk-button" onclick="myOpenClose()">
+    Open / close filters
+  </button>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -92,7 +94,7 @@
           </div>
 
           <form action="/results-v3" method="post" novalidate data-validate='my-form-validation'>
-            <div class="moj-filter__options">
+            <div class="moj-filter__options" id="myFilter">
         
               <button class="govuk-button" data-module="govuk-button">
                 Apply filters
@@ -515,7 +517,7 @@
     <div class="govuk-grid-column-two-thirds">
     
     <!-- <hr class="govuk-!-margin-bottom-4"> -->
-    <div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row" style="margin-top: 10px;">
       <div class="govuk-summary-list__key">
         <span class="govuk-caption-m">Family hub</span>
         <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
@@ -686,7 +688,18 @@
 
 
 {% endblock %}
-
+{% block pageScripts %}
+<script>
+  function myOpenClose() {
+    var x = document.getElementById("myFilter");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
+{% endblock %}
 
 
 
