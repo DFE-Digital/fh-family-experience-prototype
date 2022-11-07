@@ -37,12 +37,14 @@
     </div>
   </div>
 
-
+  <button class="govuk-button govuk-button--secondary close-filters-btn"  data-module="govuk-button" onclick="myOpenClose()">
+    Open / close filters
+  </button>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       
-      <div class="moj-filter">
+      <div class="moj-filter" id="myFilter">
 
         <div class="moj-filter__header" style="padding: 0;">
           <!-- <div class="moj-filter__header-title">
@@ -552,7 +554,7 @@
     <div class="govuk-grid-column-two-thirds">
     
 
-    <div style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 5px 20px;"> 
+    <div style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 20px 20px;" class="fam-hub-wrapper"> 
       <div class="highlight-wrapper">
         <div class="govuk-summary-list__row">
           <div class="govuk-summary-list__key">
@@ -612,16 +614,12 @@
               Free
             </dd> 
           </div> 
-          <div class="govuk-summary-list__row">
-            <dt style="width: 600px">
-              <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
-              and activities in your area.</p>
-
-              <a href="results-all-hubs">See more family hubs.</a>
-
-            </dt>
-          </div>
         </dl>
+        <div>
+            <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
+            and activities in your area.</p>
+            <a href="results-all-hubs">See more family hubs.</a>
+        </div>
       </div>
     </div>
 
@@ -910,6 +908,18 @@
 
 {% endblock %}
 
+{% block pageScripts %}
+<script>
+  function myOpenClose() {
+    var x = document.getElementById("myFilter");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
+{% endblock %}
 
 
 
