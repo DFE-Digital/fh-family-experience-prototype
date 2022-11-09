@@ -112,237 +112,282 @@
                           <div class="searchable-collection-component--only-scrollable">
                             
 
-                              {{ govukCheckboxes({
-                                name: "category-2",
-                                classes: "govuk-checkboxes--small",
-                                fieldset: {
-                                  legend: {
-                                    text: "Activities, clubs and groups",
-                                    isPageHeading: false,
-                                    classes: "govuk-fieldset__legend--s"
-                                  }
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Activities, clubs and groups",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Activities"
                                 },
-                                items: [
-                                  {
-                                    value: "",
-                                    text: "Activities"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Before and after school clubs"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Holiday clubs and schemes"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Music, arts and dance"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Parent, baby and toddler groups"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Pre-school playgroup"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Sports and recreation"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Youth clubs and activities"
-                                  }
-                                ]
-                              }) }}
+                                {
+                                  value: "",
+                                  text: "Before and after school clubs"
+                                },
+                                {
+                                  value: "",
+                                  text: "Holiday clubs and schemes"
+                                },
+                                {
+                                  value: "",
+                                  text: "Music, arts and dance"
+                                },
+                                {
+                                  value: "",
+                                  text: "Parent, baby and toddler groups"
+                                },
+                                {
+                                  value: "",
+                                  text: "Pre-school playgroup"
+                                },
+                                {
+                                  value: "",
+                                  text: "Sports and recreation"
+                                },
+                                {
+                                  value: "",
+                                  text: "Youth clubs and activities"
+                                }
+                              ]
+                            }) }}
 
-                              {{ govukCheckboxes({
-                                name: "category-2",
-                                classes: "govuk-checkboxes--small",
-                                fieldset: {
-                                  legend: {
-                                    text: "Family support",
-                                    isPageHeading: false,
-                                    classes: "govuk-fieldset__legend--s"
-                                  }
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Family support",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Breaks and respite"
                                 },
-                                items: [
-                                  {
-                                    value: "",
-                                    text: "Breaks and respite"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Bullying and cyber bullying"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Debt and welfare advice"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Domestic abuse"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Intensive targeted family support"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Money, benefits and housing"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Reducing parental conflict"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Separating and separated parent support"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Stopping smoking"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Substance misuse (including alcohol and drug)"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Support with parenting"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Targeted support and youth justice services"
-                                  }
-                                ]
-                              }) }}
+                                {
+                                  value: "",
+                                  text: "Bullying and cyber bullying"
+                                },
+                                {
+                                  value: "",
+                                  text: "Debt and welfare advice"
+                                },
+                                {
+                                  value: "",
+                                  text: "Domestic abuse"
+                                },
+                                {
+                                  value: "",
+                                  text: "Intensive targeted family support"
+                                },
+                                {
+                                  value: "",
+                                  text: "Money, benefits and housing"
+                                },
+                                {
+                                  value: "",
+                                  text: "Reducing parental conflict"
+                                },
+                                {
+                                  value: "",
+                                  text: "Separating and separated parent support"
+                                },
+                                {
+                                  value: "",
+                                  text: "Stopping smoking"
+                                },
+                                {
+                                  value: "",
+                                  text: "Substance misuse (including alcohol and drug)"
+                                },
+                                {
+                                  value: "",
+                                  text: "Support with parenting"
+                                },
+                                {
+                                  value: "",
+                                  text: "Targeted support and youth justice services"
+                                }
+                              ]
+                            }) }}
 
-                              {{ govukCheckboxes({
-                                name: "category-2",
-                                classes: "govuk-checkboxes--small",
-                                fieldset: {
-                                  legend: {
-                                    text: "Health",
-                                    isPageHeading: false,
-                                    classes: "govuk-fieldset__legend--s"
-                                  }
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Health",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Hearing and sight"
                                 },
-                                items: [
-                                  {
-                                    value: "",
-                                    text: "Hearing and sight"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Nutrition and weight management"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Oral health"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Public health services"
-                                  }
-                                ]
-                              }) }}
+                                {
+                                  value: "",
+                                  text: "Nutrition and weight management"
+                                },
+                                {
+                                  value: "",
+                                  text: "Oral health"
+                                },
+                                {
+                                  value: "",
+                                  text: "Public health services"
+                                }
+                              ]
+                            }) }}
 
-                              {{ govukCheckboxes({
-                                name: "category-2",
-                                classes: "govuk-checkboxes--small",
-                                fieldset: {
-                                  legend: {
-                                    text: "Pregnancy, birth and early years",
-                                    isPageHeading: false,
-                                    classes: "govuk-fieldset__legend--s"
-                                  }
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Mental Health",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "To confirm"
                                 },
-                                items: [
-                                  {
-                                    value: "",
-                                    text: "Early years language and learning"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Birth registration"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Infant feeding support (including breastfeeding)"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Midwife and maternity"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Perinatal mental health support (pregnancy to one year post birth)"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Health visiting"
-                                  }
-                                ]
-                              }) }}
+                                {
+                                  value: "",
+                                  text: "To confirm"
+                                }
+                              ]
+                            }) }}
 
-                              {{ govukCheckboxes({
-                                name: "category-2",
-                                classes: "govuk-checkboxes--small",
-                                fieldset: {
-                                  legend: {
-                                    text: "Special educational needs and disabilities (SEND) support",
-                                    isPageHeading: false,
-                                    classes: "govuk-fieldset__legend--s"
-                                  }
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Pregnancy, birth and early years",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Early years language and learning"
                                 },
-                                items: [
-                                  {
-                                    value: "",
-                                    text: "Early years support"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Groups for parents and carers of children with SEND"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Healthcare and therapies"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Support outside school"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Support with education"
-                                  }
-                                ]
-                              }) }}
+                                {
+                                  value: "",
+                                  text: "Birth registration"
+                                },
+                                {
+                                  value: "infant-feeding",
+                                  text: "Infant feeding support (including breastfeeding)"
+                                },
+                                {
+                                  value: "",
+                                  text: "Midwife and maternity"
+                                },
+                                {
+                                  value: "",
+                                  text: "Perinatal mental health support (pregnancy to one year post birth)"
+                                },
+                                {
+                                  value: "",
+                                  text: "Health visiting"
+                                }
+                              ]
+                            }) }}
 
-                              {{ govukCheckboxes({
-                                name: "category-2",
-                                classes: "govuk-checkboxes--small",
-                                fieldset: {
-                                  legend: {
-                                    text: "Transport",
-                                    isPageHeading: false,
-                                    classes: "govuk-fieldset__legend--s"
-                                  }
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Special educational needs and disabilities (SEND) support",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Early years support"
                                 },
-                                items: [
-                                  {
-                                    value: "",
-                                    text: "Community transport"
-                                  },
-                                  {
-                                    value: "",
-                                    text: "Specialist transport"
-                                  }
-                                ]
-                              }) }}
+                                {
+                                  value: "",
+                                  text: "Groups for parents and carers of children with SEND"
+                                },
+                                {
+                                  value: "",
+                                  text: "Healthcare and therapies"
+                                },
+                                {
+                                  value: "",
+                                  text: "Support outside school"
+                                },
+                                {
+                                  value: "",
+                                  text: "Support with education"
+                                }
+                              ]
+                            }) }}
+
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Transport",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Community transport"
+                                },
+                                {
+                                  value: "",
+                                  text: "Specialist transport"
+                                }
+                              ]
+                            }) }}
+
+                            {{ govukCheckboxes({
+                              name: "category-2",
+                              classes: "govuk-checkboxes--small",
+                              fieldset: {
+                                legend: {
+                                  text: "Youth",
+                                  isPageHeading: false,
+                                  classes: "govuk-fieldset__legend--s"
+                                }
+                              },
+                              items: [
+                                {
+                                  value: "",
+                                  text: "Justice services"
+                                },
+                                {
+                                  value: "targeted-support",
+                                  text: "Targeted support"
+                                }
+                              ]
+                            }) }}
+
 
                               
                           </div>
