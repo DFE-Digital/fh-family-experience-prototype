@@ -151,10 +151,6 @@
                                 {
                                   value: "",
                                   text: "Sports and recreation"
-                                },
-                                {
-                                  value: "",
-                                  text: "Youth clubs and activities"
                                 }
                               ]
                             }) }}
@@ -170,10 +166,6 @@
                                 }
                               },
                               items: [
-                                {
-                                  value: "",
-                                  text: "Breaks and respite"
-                                },
                                 {
                                   value: "",
                                   text: "Bullying and cyber bullying"
@@ -196,6 +188,10 @@
                                 },
                                 {
                                   value: "",
+                                  text: "Parenting support"
+                                },
+                                {
+                                  value: "",
                                   text: "Reducing parental conflict"
                                 },
                                 {
@@ -211,8 +207,12 @@
                                   text: "Substance misuse (including alcohol and drug)"
                                 },
                                 {
+                                  value: "targeted-support",
+                                  text: "Targeted youth support"
+                                },
+                                {
                                   value: "",
-                                  text: "Support with parenting"
+                                  text: "Youth justice services"
                                 }
                               ]
                             }) }}
@@ -243,31 +243,15 @@
                                 {
                                   value: "",
                                   text: "Public health services"
+                                },
+                                {
+                                  value: "",
+                                  text: "Mental health, social and emtional support"
                                 }
                               ]
                             }) }}
 
-                            {{ govukCheckboxes({
-                              name: "category-2",
-                              classes: "govuk-checkboxes--small",
-                              fieldset: {
-                                legend: {
-                                  text: "Mental Health",
-                                  isPageHeading: false,
-                                  classes: "govuk-fieldset__legend--s"
-                                }
-                              },
-                              items: [
-                                {
-                                  value: "",
-                                  text: "To confirm"
-                                },
-                                {
-                                  value: "",
-                                  text: "To confirm"
-                                }
-                              ]
-                            }) }}
+                           
 
                             {{ govukCheckboxes({
                               name: "category-2",
@@ -324,19 +308,47 @@
                                 },
                                 {
                                   value: "",
+                                  text: "Autistic Spectrum Disorder (ASD) "
+                                },
+                                {
+                                  value: "",
+                                  text: "Breaks and respite"
+                                },
+                                {
+                                  value: "",
                                   text: "Groups for parents and carers of children with SEND"
                                 },
                                 {
                                   value: "",
-                                  text: "Healthcare and therapies"
+                                  text: "Hearing impairment"
                                 },
                                 {
                                   value: "",
-                                  text: "Support outside school"
+                                  text: "Multi-sensory impairment"
                                 },
                                 {
                                   value: "",
-                                  text: "Support with education"
+                                  text: "Physical disabilities"
+                                },
+                                {
+                                  value: "",
+                                  text: "Learning difficulties and disabilities"
+                                },
+                                {
+                                  value: "",
+                                  text: "Social, emotional and mental health support"
+                                },
+                                {
+                                  value: "",
+                                  text: "Speech, language and communication needs"
+                                },
+                                {
+                                  value: "",
+                                  text: "Visual impairment"
+                                },
+                                {
+                                  value: "",
+                                  text: "Other difficulties or disabilities"
                                 }
                               ]
                             }) }}
@@ -355,32 +367,6 @@
                                 {
                                   value: "",
                                   text: "Community transport"
-                                },
-                                {
-                                  value: "",
-                                  text: "Specialist transport"
-                                }
-                              ]
-                            }) }}
-
-                            {{ govukCheckboxes({
-                              name: "category-2",
-                              classes: "govuk-checkboxes--small",
-                              fieldset: {
-                                legend: {
-                                  text: "Youth",
-                                  isPageHeading: false,
-                                  classes: "govuk-fieldset__legend--s"
-                                }
-                              },
-                              items: [
-                                {
-                                  value: "",
-                                  text: "Justice services"
-                                },
-                                {
-                                  value: "targeted-support",
-                                  text: "Targeted support"
                                 }
                               ]
                             }) }}
