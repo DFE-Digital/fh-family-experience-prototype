@@ -33,6 +33,21 @@ router.post('/results', function (req, res) {
   }
 })
 
+//Build
+router.post('/results-build', function (req, res) {
+  const checkedValues3 = req.session.data['category-3']
+
+  if (checkedValues3.includes('all-hubs') ){
+    res.redirect('/build-prototype/results-all-hubs')
+  } else if (checkedValues3.includes('infant-feeding')) {
+    res.redirect('/build-prototype/results-infant-feeding')
+  } else if (checkedValues3.includes('targeted-support')) {
+    res.redirect('/build-prototype/results-targeted-support')
+  } else {
+    res.redirect('/build-prototype/results')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line
