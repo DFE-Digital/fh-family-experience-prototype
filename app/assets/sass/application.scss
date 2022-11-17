@@ -685,3 +685,8 @@ a:focus:visited {
   background-repeat: no-repeat;
 }
 
+.govuk-details__text.custom-component {
+  padding-left: 0;
+  border-left: none;
+  padding-bottom: 0;
+}

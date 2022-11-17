@@ -599,7 +599,7 @@
         <div>
             <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
             and activities in your area.</p>
-            <!-- <a href="results-all-hubs">See more family hubs.</a> -->
+            <!-- <a href="" class="add">See more family hubs.</a> -->
             <details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
@@ -611,7 +611,7 @@
                   <div class="govuk-summary-list__row">
                     <div class="govuk-summary-list__key">
                       <span class="govuk-caption-m">Family hub</span>
-                      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Family Hubs (children's centres), Salford<span style="font-weight: 400;"> (0.4 miles)</span></h3>
+                      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.4 miles)</span></h3>
                     </div>
                   </div>
           
@@ -962,11 +962,11 @@
           {
             number: 1,
             current: true,
-            href: "results"
+            href: "#"
           },
           {
             number: 2,
-            href: "results-page-2"
+            href: "#"
           },
           {
             number: 3,
@@ -991,6 +991,17 @@
       x.style.display = "none";
     }
   }
+
+  const addContent = document.querySelector('.add');
+
+  
+
+  addContent.addEventListener('click', e => {
+    e.preventDefault();
+
+  });
+
+
 </script>
 {% endblock %}
 

@@ -943,15 +943,6 @@
     </dl>
 
 
-    <ul class="govuk-list govuk-!-margin-top-6">
-      <!-- <li>
-        <a href="results-v3-youth-services" class="govuk-link">Youth services</a>
-      </li> -->
-      <li>
-        <a href="family-hub-results-bad-journey" class="govuk-link">Bad journey</a>
-      </li>
-    </ul>
-
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
       {{ govukPagination({
@@ -961,11 +952,11 @@
         items: [
           {
             number: 1,
-            current: true,
             href: "results"
           },
           {
             number: 2,
+            current: true,
             href: "results-page-2"
           },
           {
