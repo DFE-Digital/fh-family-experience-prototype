@@ -1,15 +1,10 @@
 
-{% extends "layout.html" %}
+{% extends "layout-DfE.html" %}
 {% set mainClasses = "custom-main" %}
 
 {% block header %}
 
-{{ govukHeader({
-  homepageUrl: "home",
-  serviceName: "",
-  serviceUrl: ""
-}) }}
-{% endblock %}
+
 
 {% block beforeContent %}
   {{ govukPhaseBanner({

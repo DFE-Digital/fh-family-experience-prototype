@@ -41,84 +41,22 @@
   Prototype for: Family experience
 {% endblock %}
 
-<style>
-  body, p, h1, h2, h3, h4, h5, h6, a, span, div, table, th, td, blockquote, li, tr {
-  font-family: 
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      Oxygen-Sans,
-      Ubuntu,
-      Cantarell,
-      'Helvetica Neue',
-      sans-serif !important;
-}
-
-
-
-.govuk-header {
-  background-color: #003a69;
-}
-
-.govuk-header__container {
-  position: relative;
-  margin-bottom: -10px;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  border-bottom: 10px solid #347ca9;
-}
-
-.govuk-header__product-name, 
-.govuk-header__logotype-text,
-.govuk-header__content {
-  line-height: 2.5rem !important;
-  font-size: 1.2rem;
-}
-
-.govuk-header__logotype-crown-fallback-image {
-  height: 45px; 
-  width: 45px;
-}
-
-.govuk-header__logotype {
-  margin-right: 0;
-}
-
-.govuk-header__logo {
-      width: 70%;
-  }
-
-  
-.govuk-header__content {
-      width: 30%;
-      float: right;
-}
-
-.govuk-header nav {
-  display: inline-block;
-  float: none;
-}
-
-body > header > div > div > a > span.govuk-header__logotype > span {
-  color: tomato;
-}
-</style>
 
 {% block header %}
   {# Set serviceName in config.js. #}
-  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
-    <div class="govuk-header__container govuk-width-container">
-     <div class="govuk-header__logo">
-       <a href="/" class="govuk-header__link govuk-header__link--homepage">
-       <span class="govuk-header__logotype">
-        <img src="/public/images/crest.png" alt="Department for Education homepage" class="govuk-header__logotype-crown-fallback-image">
-          <span class="govuk-header__logotype-text">
+  <header class="govuk-header_dfe app-header govuk-!-margin-bottom-2" role="banner" data-module="govuk-header">
+    <div class="govuk-header__container_dfe govuk-width-container">
+     <div class="govuk-header__logo_dfe">
+       <a href="/" class="govuk-header__link_dfe govuk-header__link--homepage">
+       <div class="govuk-header__logotype_dfe">
+        <img src="/public/images/crest.png" alt="Department for Education homepage" class="govuk-header__logotype-crown-fallback-image_dfe">
+          <span class="govuk-header__logotype-text_dfe">
             Department for Education |
           </span>
-        </span>
-        <!-- <span class="govuk-header__product-name">
-          {{serviceName}}
-        </span> -->
+          <span class="govuk-header__product-name_dfe">
+            {{serviceName}}
+          </span>
+        </div>
        </a>     
      </div>
    </div>
