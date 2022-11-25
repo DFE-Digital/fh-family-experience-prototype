@@ -49,15 +49,20 @@
 
         {{ govukInput({
           label: {
-            text: "Enter postcode",
+            text: "Enter a postcode",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           id: "postcode-services",
+          hint: {
+            text: "For example SW1A 2AA"
+          },
           name: "postcode-services",
           classes: "govuk-input--width-10",
           value: data['postcode-services']
-        }) }}
+        }
+        ) }}
+
   
         {{ govukButton({
           html: "Search"
