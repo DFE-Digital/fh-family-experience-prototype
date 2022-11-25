@@ -746,19 +746,18 @@ $accent: #347ca9;
     
     .govuk-header__logo {
         @include mq ($from: desktop) {
-          width: 70%;
+          width: 100%;
         }
       }
       
     .govuk-header__content {
         @include mq ($from: desktop) {
-            width: 30%;
+            width: 0%;
             float: right;
         }
     }
     
     .govuk-header nav {
-        display: inline-block;
         float: right;
     }
 
@@ -766,6 +765,10 @@ $accent: #347ca9;
       color: #ffffff;
       display: inline-block;
       padding-top: 10px;
+    }
+
+    header > div > div.govuk-header__logo {
+      width: 100%;
     }
 
  
