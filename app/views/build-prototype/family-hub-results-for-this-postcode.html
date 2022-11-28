@@ -1,26 +1,8 @@
-
-{% extends "layout.html" %}
+{% extends "layout-DfE.html" %}
 {% set mainClasses = "custom-main" %}
+{% set bodyClasses = "dfe-template__body" %}
 
-{% block header %}
 
-{{ govukHeader({
-  homepageUrl: "home",
-  serviceName: "",
-  serviceUrl: "",
-  navigation: [
-    {
-      href: "family-hub",
-      text: "Family hubs",
-      active: true
-    },
-    {
-      href: "find-services-overview",
-      text: "Services or groups"
-    }
-  ]
-}) }}
-{% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
