@@ -24,7 +24,7 @@
         Your local family hubs, services and activities 
       </h1>
       
-      <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for: <a href="enter-postcode.html" class="govuk-link">{{ data['postcode-services'] }}</a> 
+      <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for: <a href="enter-postcode.html" class="govuk-link">{{ data['postcode-services'].slice(0, 3) | upper }} {{ data['postcode-services'].slice(3) | upper }}</a> 
 
     </div>
   </div>
