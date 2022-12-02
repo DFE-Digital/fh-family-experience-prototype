@@ -465,52 +465,63 @@
               </div>
 
         
-              <div class="govuk-form-group">
-                <div class="govuk-fieldset">
-
-                
-                  {{ govukCheckboxes({
-                    name: "category-3",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        text: "Age range",
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
-                      {
-                        value: "all-age-groups",
-                        text: "All age groups",
-                        checked: true
-                      },
-                      {
-                        value: "",
-                        text: "0 to 5"
-                      },
-                      {
-                        value: "",
-                        text: "6 to 11"
-                      },
-                      {
-                        value: "",
-                        text: "12 to 15"
-                      },
-                      {
-                        value: "",
-                        text: "16 to 18"
-                      },
-                      {
-                        value: "",
-                        text: "19 to 25 with SEND"
-                      }
-                    ]
-                  }) }}
-        
+              <div class="filters-component__groups__group govuk-!-padding-bottom-3">
+                <div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h3 class="govuk-fieldset__heading">Children and young people</h3>
+                      </legend>
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="age-3" name="age" type="checkbox" value="Children and young people" aria-controls="age-range">
+                          <label class="govuk-label govuk-checkboxes__label" for="age-3">
+                            For children and young people
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="age-range">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="ageNumber">
+                              Age
+                            </label>
+                            <select class="govuk-select" id="ageNumber" name="ageNumber">
+                              <option value="all" selected>All ages</option>
+                              <option value="0">0 to 12 months</option>
+                              <option value="1">1 year old</option>
+                              <option value="2">2 year old</option>
+                              <option value="3">3 year old</option>
+                              <option value="4">4 year old</option>
+                              <option value="5">5 year old</option>
+                              <option value="6">6 year old</option>
+                              <option value="7">7 year old</option>
+                              <option value="8">8 year old</option>
+                              <option value="9">9 year old</option>
+                              <option value="10">10 year old</option>
+                              <option value="11">11 year old</option>
+                              <option value="12">12 year old</option>
+                              <option value="13">13 year old</option>
+                              <option value="14">14 year old</option>
+                              <option value="15">15 year old</option>
+                              <option value="16">16 year old</option>
+                              <option value="17">17 year old</option>
+                              <option value="18">18 year old</option>
+                              <option value="19">19 year old</option>
+                              <option value="20">20 year old</option>
+                              <option value="21">21 year old</option>
+                              <option value="22">22 year old</option>
+                              <option value="23">23 year old</option>
+                              <option value="24">24 year old</option>
+                              <option value="25">25 year old</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
                 </div>
-        
               </div>
+
+
         
             </div>
           </form>
