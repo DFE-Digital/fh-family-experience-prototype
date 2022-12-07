@@ -1,0 +1,103 @@
+
+{% extends "layout-pre-mvp.html" %}
+{% set mainClasses = "custom-main" %}
+{% set bodyClasses = "dfe-template__body" %}
+
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service, your <a href="#">feedback</a> will help us improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+ 
+<div class="full-BGstrip">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4 govuk-!-margin-top-2cc">Cookies</h1>
+    
+
+      <p>Cookies are small files saved on your phone, tablet or computer when you visit a website.</p> 
+
+      <p>We use cookies to make this site work and collect information about how you use our service.</p>
+        
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Essential cookies",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name",
+            classes: 'govuk-!-width-one-half'
+          },
+          {
+            text: "Purpose",
+            classes: 'govuk-!-width-one-quarter'
+          },
+          {
+            text: "Expires",
+            classes: 'govuk-!-width-one-quarter'
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "some text"
+            },
+            {
+              text: "some text"
+            },
+            {
+              text: "some text"
+            }
+          ],
+          [
+            {
+              text: "some text"
+            },
+            {
+              text: "some text"
+            },
+            {
+              text: "some text"
+            }
+          ],
+          [
+            {
+              text: "some text"
+            },
+            {
+              text: "some text"
+            },
+            {
+              text: "some text"
+            }
+          ]
+        ]
+      }) }}
+
+      
+    
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  
+{% endblock %}
+
+
+
+
+
+

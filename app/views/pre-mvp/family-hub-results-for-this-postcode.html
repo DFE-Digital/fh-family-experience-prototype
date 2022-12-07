@@ -1,9 +1,6 @@
-
-{% extends "layout-DfE.html" %}
+{% extends "layout-pre-mvp.html" %}
 {% set mainClasses = "custom-main" %}
 {% set bodyClasses = "dfe-template__body" %}
-
-{% block header %}
 
 
 
@@ -12,7 +9,7 @@
     tag: {
       text: "beta"
     },
-    html: 'This is not a full service. It is not production code and you might experience problems.'
+    html: 'This is a new service, your <a href="#">feedback</a> will help us improve it.'
   }) }}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}

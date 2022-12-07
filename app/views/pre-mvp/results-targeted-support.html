@@ -1,10 +1,6 @@
-
-{% extends "layout-DfE.html" %}
+{% extends "layout-pre-mvp.html" %}
 {% set mainClasses = "custom-main" %}
 {% set bodyClasses = "dfe-template__body" %}
-
-{% block header %}
-
 
 
 {% block beforeContent %}
@@ -12,7 +8,7 @@
     tag: {
       text: "beta"
     },
-    html: 'This is not a full service. It is not production code and you might experience problems.'
+    html: 'This is a new service, your <a href="#">feedback</a> will help us improve it.'
   }) }}
   <a class="govuk-back-link" href="enter-postcode">Back</a>
 {% endblock %}
@@ -25,14 +21,14 @@
       <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 2 of 3</span> -->
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-        Your local family hubs
+        Your local family hubs, services and activities 
       </h1>
       
       <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for: <a href="enter-postcode.html" class="govuk-link">{{ data['postcode-services'] }}</a> 
 
     </div>
   </div>
-
+  
   <button class="govuk-button govuk-button--secondary close-filters-btn"  data-module="govuk-button" onclick="myOpenClose()">
     Open / close filters
   </button>
@@ -69,19 +65,20 @@
             </div>
 
           
-            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Show</h3>
+            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Category</h3>
 
             <ul class="moj-filter-tags filters-component__remove-tags">
-              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Family hubs</a></li>
+              <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Targeted support and youth justice services</a></li>
             </ul>
 
-            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Search within</h3>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Search within</h3>
 
             <ul class="moj-filter-tags filters-component__remove-tags">
               <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>20 miles</a></li>
             </ul>
+
       
-            <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Age range</h3>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Age range</h3>
       
             <ul class="moj-filter-tags filters-component__remove-tags">
               <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>All age groups</a></li>
@@ -89,7 +86,7 @@
       
           </div>
 
-          <form action="/results-build" method="post" novalidate data-validate='my-form-validation'>
+          <form action="/results-build" method="post">
             <div class="moj-filter__options" id="myFilter">
         
               <button class="govuk-button" data-module="govuk-button">
@@ -102,7 +99,7 @@
 
                   <div class="filters-component__groups">
                     <div class="filters-component__groups__group" data-filters-target="group" data-group="subjects">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h3 class="govuk-fieldset__heading">Category</h3></legend>
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h3 class="govuk-fieldset__heading">Type of support</h3></legend>
                       <div>
                         <div class="searchable-collection-component" style="margin-bottom: 20px;">
                           <div class="searchable-collection-component--only-scrollable">
@@ -365,6 +362,8 @@
                                 }
                               ]
                             }) }}
+
+
                               
                           </div>
                         </div>
@@ -404,7 +403,7 @@
                   
 
                   {{ govukCheckboxes({
-                    name: "",
+                    name: "category-3",
                     classes: "govuk-checkboxes--small",
                     fieldset: {
                       legend: {
@@ -415,9 +414,8 @@
                     },
                     items: [
                       {
-                        value: "",
-                        text: "Family hubs",
-                        checked: true
+                        value: "all-hubs",
+                        text: "Family hubs"
                       },
                       {
                         value: "",
@@ -475,51 +473,60 @@
               </div>
 
         
-              <div class="govuk-form-group">
-                <div class="govuk-fieldset">
-
-                
-                  {{ govukCheckboxes({
-                    name: "organisation",
-                    classes: "govuk-checkboxes--small",
-                    fieldset: {
-                      legend: {
-                        text: "Age range",
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--s"
-                      }
-                    },
-                    items: [
-                      {
-                        value: "",
-                        text: "All age groups",
-                        checked: true
-                      },
-                      {
-                        value: "",
-                        text: "0 to 5"
-                      },
-                      {
-                        value: "",
-                        text: "6 to 11"
-                      },
-                      {
-                        value: "",
-                        text: "12 to 15"
-                      },
-                      {
-                        value: "",
-                        text: "16 to 18"
-                      },
-                      {
-                        value: "",
-                        text: "19 to 25 with SEND"
-                      }
-                    ]
-                  }) }}
-        
+              <div class="filters-component__groups__group govuk-!-padding-bottom-3">
+                <div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h3 class="govuk-fieldset__heading">Children and young people</h3>
+                      </legend>
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="age-3" name="age" type="checkbox" value="Children and young people" aria-controls="age-range">
+                          <label class="govuk-label govuk-checkboxes__label" for="age-3">
+                            For children and young people
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="age-range">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="ageNumber">
+                              Age
+                            </label>
+                            <select class="govuk-select" id="ageNumber" name="ageNumber">
+                              <option value="all" selected>All ages</option>
+                              <option value="0">0 to 12 months</option>
+                              <option value="1">1 year old</option>
+                              <option value="2">2 year old</option>
+                              <option value="3">3 year old</option>
+                              <option value="4">4 year old</option>
+                              <option value="5">5 year old</option>
+                              <option value="6">6 year old</option>
+                              <option value="7">7 year old</option>
+                              <option value="8">8 year old</option>
+                              <option value="9">9 year old</option>
+                              <option value="10">10 year old</option>
+                              <option value="11">11 year old</option>
+                              <option value="12">12 year old</option>
+                              <option value="13">13 year old</option>
+                              <option value="14">14 year old</option>
+                              <option value="15">15 year old</option>
+                              <option value="16">16 year old</option>
+                              <option value="17">17 year old</option>
+                              <option value="18">18 year old</option>
+                              <option value="19">19 year old</option>
+                              <option value="20">20 year old</option>
+                              <option value="21">21 year old</option>
+                              <option value="22">22 year old</option>
+                              <option value="23">23 year old</option>
+                              <option value="24">24 year old</option>
+                              <option value="25">25 year old</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
                 </div>
-        
               </div>
         
             </div>
@@ -533,173 +540,339 @@
 
     <div class="govuk-grid-column-two-thirds">
     
-    <!-- <hr class="govuk-!-margin-bottom-4"> -->
-    <div class="govuk-summary-list__row" style="margin-top: 10px;">
-      <div class="govuk-summary-list__key">
-        <span class="govuk-caption-m">Family hub</span>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
-      </div>
-    </div>
 
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Where 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Broughton Hub<br>
-          50 Rigby Street<br>
-          Salford<br>
-          M7 4BQ<br>
-        </dd>
+      <div style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 20px 20px;"> 
+        <div class="highlight-wrapper">
+          <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__key">
+              <span class="govuk-caption-m">Family hub</span>
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
+            </div>
+          </div>
+  
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Where
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Broughton Hub<br>
+                50 Rigby Street<br>
+                Salford M7 4BQ
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="tel:01617780601">0161 778 0601</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>  
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Website
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Opening hours
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Monday to Friday, 9am to 5pm
+              </dd> 
+            </div> 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Cost
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Free
+              </dd> 
+            </div> 
+          </dl>
+          <div>
+            <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
+            and activities in your area.</p>
+        </div>
+        </div>
       </div>
+  
+      <!-- <hr class="govuk-!-margin-bottom-4"> -->
+      <p style="margin-top: 20px; margin-bottom: 0px;">Listings below show the nearest services or 
+        activities you have searched for. These may take place at different locations, like 
+         family hubs, children’s centres or community centres.</p>
+      <!-- <hr class="govuk-!-margin-bottom-2 govuk-!-margin-top-4"> -->
+  
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Phone
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="tel:0161 778 0601">0161 778 0601</a>
-        </dd>
+        <div class="govuk-summary-list__key" style="padding-top: 0;">
+          <span class="govuk-caption-m govuk-!-margin-top-3">Service</span>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">School nurse virtual drop-in sessions (online only)</h3>
+        </div>
       </div>
+  
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Run by 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            NHS Salford Clinical Commissioning Group
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age range 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            11 to 19
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Fridays, 4pm to 8pm 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Online only
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="tel:03003335352">0300 3335 352</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="mailto:Central0-19@nca.nhs.uk">central0-19@nca.nhs.uk</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="https://019.s3.amazonaws.com/documents/School_Nurse_drop_in_poster.pdf">School nurse virtual drop-ins service</a>
+          </dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Availability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Drop in
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cost
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Free
+          </dd>
+        </div>
+      </dl>
+    
+  
+      <hr class="govuk-!-margin-bottom-4">
+      
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>
-        </dd>
+        <div class="govuk-summary-list__key" style="padding-top: 0;">
+          <span class="govuk-caption-m">Service</span>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Kooth (free online counselling)<span style="font-weight: 400;"> (online only)</span></h3>
+        </div>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Website
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
-        </dd>
+  
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Run by 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Kooth PLC, commissioned by NHS Salford Clinical Commissioning Group
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age range 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            11 to 19
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            24 hours a day, 7 days a week
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Online only
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>This service does not have a phone number</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="mailto:info@koothsalford.co.uk">info@koothsalford.co.uk</a>  
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="https://www.kooth.com/">Kooth</a>
+          </dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Availability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Self-referral
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cost
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Free
+          </dd>
+        </div>
+      </dl>
+  
+      <hr class="govuk-!-margin-bottom-4">
+  
+      <div class="govuk-summary-list__row" style="padding-top: 0;">
+        <div class="govuk-summary-list__key">
+          <span class="govuk-caption-m">Service</span>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Child and Adolescent Mental Health Services (CAMHS)<span style="font-weight: 400;"> (0.4 miles)</span></h3>
+        </div>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Opening hours
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Monday to Friday, 9am to 5pm
-        </dd>
-      </div>
-    </dl>
+  
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row" style="padding-top: 0;">
+          <dt class="govuk-summary-list__key">
+            Run by 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Manchester University NHS Foundation Trust
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age range 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0 to 19 (0 to 25 with SEND)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday to Friday, 9am to 5pm
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Carol Kendrick Centre<br>
+            Stratus House<br>
+            Southmoor Road<br>
+            Roundthorn Industrial Estate<br>
+            Wythenshawe<br>
+            Manchester<br>
+            M23 9XD
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="tel:01615185400">0161 518 5400</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="mailto:cmm-tr.salford-CAMHS@nhs.net">cmm-tr.salford-CAMHS@nhs.net</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="https://mft.nhs.uk/rmch/services/camhs/">CAMHS</a>
+          </dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Availability
+          </dt>
+          <dd class="govuk-summary-list__value">
+            By appointment
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cost
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Free
+          </dd>
+        </div>
+      </dl>
 
-    <hr class="govuk-!-margin-bottom-4">
-
-    <div class="govuk-summary-list__row">
-      <div class="govuk-summary-list__key">
-        <span class="govuk-caption-m">Family hub</span>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">North Family Hub, Swinton<span style="font-weight: 400;"> (0.9 miles)</span></h3>
-      </div>
-    </div>
-
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Where 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Swinton Gateway<br>
-          100 Chorley Road<br>
-          Swinton<br>
-          M27 6BP<br>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Phone
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="tel:0161 778 0495">0161 778 0495</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="mailto:swintonhub@salford.gov.uk">swintonhub@salford.gov.uk</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Website
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">North Family Hub, Swinton</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Opening hours
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Monday to Thursday, 11am to 4pm
-        </dd>
-      </div>
-    </dl>
-
-    <hr class="govuk-!-margin-bottom-4">
-
-    <div class="govuk-summary-list__row">
-      <div class="govuk-summary-list__key">
-        <span class="govuk-caption-m">Family hub</span>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">South Family Hub, Eccles<span style="font-weight: 400;"> (3.2 miles)</span></h3>
-      </div>
-    </div>
-
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Where 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Winton Children’s Centre<br>
-          Brindley Street<br>
-          Winton<br>
-          Eccles<br>
-          Salford<br>
-          M30 8AB<br>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Phone
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="tel:0161 686 5260">0161 686 5260</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="mailto:wintonhub@salford.gov.uk">wintonhub@salford.gov.uk</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Website
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">South Family Hub, Eccles</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Opening hours
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Monday to Friday, 9am to 5pm
-        </dd>
-      </div>
-    </dl>
-
-    {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+      {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
       {{ govukPagination({
         next: {
@@ -721,7 +894,6 @@
           }
         ]
       }) }}
-   
 
     </div>
   </div>
