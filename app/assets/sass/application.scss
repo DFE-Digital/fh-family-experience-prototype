@@ -788,3 +788,8 @@ $accent: #347ca9;
     
 
 }
+
+.govuk-checkboxes__label::before,
+.govuk-radios__label::before {
+  background-color: #ffffff;
+}
