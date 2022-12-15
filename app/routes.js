@@ -49,14 +49,14 @@ router.post('/results-build', function (req, res) {
 })
 
 //Pre-MVP
-router.post('/results-mvp', function (req, res) {
-  const checkedValues3 = req.session.data['category-4']
+router.post('/results-pre', function (req, res) {
+  const checkedValues4 = req.session.data['category-4']
 
-  if (checkedValues3.includes('all-hubs') ){
+  if (checkedValues4.includes('all-hubs') ){
     res.redirect('/pre-mvp/results-all-hubs')
-  } else if (checkedValues3.includes('infant-feeding')) {
+  } else if (checkedValues4.includes('infant-feeding')) {
     res.redirect('/pre-mvp/results-infant-feeding')
-  } else if (checkedValues3.includes('targeted-support')) {
+  } else if (checkedValues4.includes('targeted-support')) {
     res.redirect('/pre-mvp/results-targeted-support')
   } else {
     res.redirect('/pre-mvp/results')

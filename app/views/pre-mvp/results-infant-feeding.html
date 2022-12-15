@@ -87,7 +87,7 @@
       
           </div>
 
-          <form action="/results-build" method="post">
+          <form action="/results-pre" method="post">
             <div class="moj-filter__options" id="myFilter">
         
               <button class="govuk-button" data-module="govuk-button">
@@ -107,7 +107,7 @@
                             
 
                             {{ govukCheckboxes({
-                              name: "category-3",
+                              name: "category-4",
                               classes: "govuk-checkboxes--small",
                               fieldset: {
                                 legend: {
@@ -149,7 +149,7 @@
                             }) }}
 
                             {{ govukCheckboxes({
-                              name: "category-3",
+                              name: "category-4",
                               classes: "govuk-checkboxes--small",
                               fieldset: {
                                 legend: {
@@ -211,7 +211,7 @@
                             }) }}
 
                             {{ govukCheckboxes({
-                              name: "category-3",
+                              name: "category-4",
                               classes: "govuk-checkboxes--small",
                               fieldset: {
                                 legend: {
@@ -247,7 +247,7 @@
                            
 
                             {{ govukCheckboxes({
-                              name: "category-3",
+                              name: "category-4",
                               classes: "govuk-checkboxes--small",
                               fieldset: {
                                 legend: {
@@ -285,7 +285,7 @@
                             }) }}
 
                             {{ govukCheckboxes({
-                              name: "category-3",
+                              name: "category-4",
                               classes: "govuk-checkboxes--small",
                               fieldset: {
                                 legend: {
@@ -347,7 +347,7 @@
                             }) }}
 
                             {{ govukCheckboxes({
-                              name: "category-3",
+                              name: "category-4",
                               classes: "govuk-checkboxes--small",
                               fieldset: {
                                 legend: {
@@ -403,7 +403,7 @@
                   
 
                   {{ govukCheckboxes({
-                    name: "category-3",
+                    name: "category-4",
                     classes: "govuk-checkboxes--small",
                     fieldset: {
                       legend: {
@@ -542,342 +542,174 @@
     
 
       <div class="highlight-wrapper" style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 20px 20px;"> 
-        <div>
-          <div class="govuk-summary-list__row">
-            <div class="govuk-summary-list__key">
-              <span class="govuk-caption-m">Family hub</span>
-              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
-            </div>
-          </div>
-  
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Where
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Broughton Hub<br>
-                50 Rigby Street<br>
-                Salford M7 4BQ
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Phone
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <a href="tel:01617780601">0161 778 0601</a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Email
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>  
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Website
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Opening hours
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Monday to Friday, 9am to 5pm
-              </dd> 
-            </div> 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Cost
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Free
-              </dd> 
-            </div> 
-          </dl>
+        <ul class="search-results" role="list">
+          <li role="listitem" tab-index="0" style="border: none;">
+            <span class="govuk-caption-m">Family hub</span>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              <a class="govuk-link" href="details_page">Central Family Hub, Salford</a><span style="font-weight: 400;">(0.2 miles)</span>
+            </h3>
+            <p style="font-size: 16px;">
+              Broughton Hub,
+              50 Rigby Street,
+              Salford, M7 4BQ
+            </p>
+            <dl class="govuk-body-s dtmargins">
+              <dt class="govuk-!-font-weight-bold">Category</dt>
+              <dd>Parent, baby and toddler groups</dd>
+            </dl>
+            <dl class="govuk-body-s dtmargins">
+              <dt class="govuk-!-font-weight-bold">Cost</dt>
+              <dd>£2 every session</dd>
+            </dl>
+            <dl class="govuk-body-s dtmargins">
+              <dt class="govuk-!-font-weight-bold">Age range</dt>
+              <dd>0 to 5</dd>
+            </dl>
+            <dl class="govuk-body-s dtmargins">
+              <dt class="govuk-!-font-weight-bold">Phone</dt>
+              <dd><a href="tel:0161 206 6081">0161 778 0601</a></dd>
+            </dl>
+            <dl class="govuk-body-s dtmargins">
+              <dt class="govuk-!-font-weight-bold">Email</dt>
+              <dd><a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a></dd>
+            </dl>
+            <dl class="govuk-body-s dtmargins">
+              <dt class="govuk-!-font-weight-bold">Website</dt>
+              <dd><a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a></dd>
+            </dl>
+          </li>
+        </ul>
+        <div class="highlight-wrapper">
           <div>
-            <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
-            and activities in your area.</p>
-        </div>
+              <p style="margin-bottom: 10px;">This is your nearest family hub. You can drop in, meet others and find general services 
+              and activities in your area.</p>
+          </div>
         </div>
       </div>
   
       <!-- <hr class="govuk-!-margin-bottom-4"> -->
-      <p style="margin-top: 20px; margin-bottom: 0px;">Listings below show the nearest services or 
-        activities you have searched for. These may take place at different locations, like 
-         family hubs, children’s centres or community centres.</p>
+      <p style="margin: 10px 0 10px 0;">Below are the nearest search results for services and groups in your area. 
+      These may take place at different locations, like family hubs, children's centres or community centres.</p>
       <!-- <hr class="govuk-!-margin-bottom-4 govuk-!-margin-top-4"> -->
+
+      <ul class="search-results" role="list">
+        <li role="listitem" tab-index="0">
+           <span class="govuk-caption-m">Services and groups</span>
+           <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+             <a class="govuk-link" href="#">Be Open On Breastfeeding in Salford</a><span style="font-weight: 400;">(0.2 miles)</span>
+           </h3>
+           <p style="font-size: 16px;">
+              The Bury Centre
+              10 Hope Street
+              Bury
+              M10 4PD
+           </p>
+           <dl class="govuk-body-s dtmargins">
+             <dt class="govuk-!-font-weight-bold">Category</dt>
+             <dd>Parent, baby and toddler groups</dd>
+           </dl>
+           <dl class="govuk-body-s dtmargins">
+             <dt class="govuk-!-font-weight-bold">Cost</dt>
+             <dd>£2 every session</dd>
+           </dl>
+           <dl class="govuk-body-s dtmargins">
+             <dt class="govuk-!-font-weight-bold">Age range</dt>
+             <dd>0 to 5</dd>
+           </dl>
+           <dl class="govuk-body-s dtmargins">
+             <dt class="govuk-!-font-weight-bold">Phone</dt>
+             <dd><a href="tel:01613654987">0161 365 4987</a></dd>
+           </dl>
+           <dl class="govuk-body-s dtmargins">
+             <dt class="govuk-!-font-weight-bold">Email</dt>
+             <dd><a href="mailto:Central0-19@nca.nhs.uk">rachel@breastfeedinginsalford.org.uk</a></dd>
+           </dl>
+           <dl class="govuk-body-s dtmargins">
+             <dt class="govuk-!-font-weight-bold">Website</dt>
+             <dd><a href="https://www.breastfeedinginsalford.org.uk/">Be Open On Breastfeeding in Salford</a></dd>
+           </dl>
+         </li>
+
+         <li role="listitem" tab-index="0">
+          <span class="govuk-caption-m">Services and groups</span>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+            <a class="govuk-link" href="#">Baby Social, South Family Hub, Winton</a><span style="font-weight: 400;">(0.4 miles)</span>
+          </h3>
+          <p style="font-size: 16px;">
+            South Family Hub
+            Winton Children’s Centre
+            Brindley Street
+            Winton
+            Eccles
+            Salford
+            M30 8AB
+          </p>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Category</dt>
+            <dd>Parent, baby and toddler groups</dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Cost</dt>
+            <dd>£2 every session</dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Age range</dt>
+            <dd>0 to 5</dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Phone</dt>
+            <dd><a href="tel:01616865260">0161 686 5260</a></dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Email</dt>
+            <dd><a href="mailto:babysocial@southhub.salford.gov.uk">babysocial@southhub.salford.gov.uk</a></dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Website</dt>
+            <dd><a href="#">Baby Social, South Family Hub</a></dd>
+          </dl>
+        </li>
+
+        <li role="listitem" tab-index="0" style="border-bottom: none;">
+          <span class="govuk-caption-m">Services and groups</span>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+            <a class="govuk-link" href="#">Baby Social, West Family Hub, Little Hulton</a><span style="font-weight: 400;">(0.7 miles)</span>
+          </h3>
+          <p style="font-size: 16px;">
+            Little Hulton Children's Centre
+            Longshaw Drive
+            Little Hulton
+            Salford
+            M28 0BD
+          </p>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Category</dt>
+            <dd>Parent, baby and toddler groups</dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Cost</dt>
+            <dd>£2 every session</dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Age range</dt>
+            <dd>0 to 5</dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Phone</dt>
+            <dd><a href="tel:01612422611">01612 422611</a></dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Email</dt>
+            <dd><a href="mailto:babysocial@southhub.salford.gov.uk">babysocial@southhub.salford.gov.uk</a></dd>
+          </dl>
+          <dl class="govuk-body-s dtmargins">
+            <dt class="govuk-!-font-weight-bold">Website</dt>
+            <dd><a href="#">Baby Social, South Family Hub</a></dd>
+          </dl>
+        </li>
+      </ul>
   
-      <div class="govuk-summary-list__row">
-        <div class="govuk-summary-list__key">
-          <span class="govuk-caption-m govuk-!-margin-top-3">Service</span>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Be Open On Breastfeeding in Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
-        </div>
-      </div>
-  
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Run by 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Breastfeeding in Salford
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Age range 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            0 to 5
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            When 
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Monday and Friday, 10am to 2pm
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Where 
-          </dt>
-          <dd class="govuk-summary-list__value">
-           The Bury Centre<br>
-           10 Hope Street<br>
-           Bury<br>
-           M10 4PD<br>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Phone
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <a href="tel:074268355351">0161 365 4987</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <a href="mailto:rachel@breastfeedinginsalford.org.uk">rachel@breastfeedinginsalford.org.uk</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Website
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <a href="https://www.breastfeedinginsalford.org.uk">Be Open On Breastfeeding in Salford</a>
-          </dd>
-        </div>
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Availability
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Drop in
-          </dd>
-        </div> -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Cost
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £2 every session
-          </dd>
-        </div>
-      </dl>
-    
-  
-    <hr class="govuk-!-margin-bottom-4">
-  
-    <div class="govuk-summary-list__row">
-      <div class="govuk-summary-list__key">
-        <span class="govuk-caption-m">Service</span>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Baby Social, South Family Hub, Winton<span style="font-weight: 400;"> (0.4 miles)</span></h3>
-      </div>
-    </div>
-  
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Run by 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          NHS Salford Clinical Commissioning Group
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Age range 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          0 to 5
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          When 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Thursdays, 10am to 11am
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Where 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          South Family Hub<br>
-          Winton Children’s Centre<br>
-          Brindley Street<br>
-          Winton<br>
-          Eccles<br>
-          Salford<br>
-          M30 8AB<br>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Phone
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="tel:0161 686 5260">0161 686 5260</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="mailto:babysocial@southhub.salford.gov.uk">babysocial@southhub.salford.gov.uk</a>  
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Website
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="www.salfordccg.nhs.uk/start-well/baby-social-groups-salford%22%3Ealfordccg.nhs.uk/start-well/baby-social-groups-salford">Baby Social, South Family Hub</a>
-        </dd>
-      </div>
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Availability
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Drop in
-        </dd>
-      </div> -->
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Cost
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Free
-        </dd>
-      </div>
-    </dl>
-  
-    <hr class="govuk-!-margin-bottom-4">
-  
-    <div class="govuk-summary-list__row">
-      <div class="govuk-summary-list__key">
-        <span class="govuk-caption-m">Service</span>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Baby Social, West Family Hub, Little Hulton <span style="font-weight: 400;">(0.7 miles)</span></h3>
-      </div>
-    </div>
-  
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Run by 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          NHS Salford Clinical Commissioning Group
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Age range 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          0 to 5
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          When 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Thursdays, 1pm to 2pm
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Where 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Little Hulton Children's Centre<br>
-          Longshaw Drive<br>
-          Little Hulton<br>
-          Salford<br>
-          M28 0BD<br>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Phone
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="tel:01612422611">01612 422611</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="mailto:babysocial@westhub.salford.gov.uk">babysocial@westhub.salford.gov.uk</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Website
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="https://www.salfordccg.nhs.uk/start-well/baby-social-groups-salford">Baby Social, West Family Hub</a>
-        </dd>
-      </div>
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Availability
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Contact to book a place
-        </dd>
-      </div> -->
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Cost
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £2 every session
-        </dd>
-      </div>
-    </dl>
+
 
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
