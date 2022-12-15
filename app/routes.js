@@ -48,6 +48,20 @@ router.post('/results-build', function (req, res) {
   }
 })
 
+//Pre-MVP
+router.post('/results-mvp', function (req, res) {
+  const checkedValues3 = req.session.data['category-4']
+
+  if (checkedValues3.includes('all-hubs') ){
+    res.redirect('/pre-mvp/results-all-hubs')
+  } else if (checkedValues3.includes('infant-feeding')) {
+    res.redirect('/pre-mvp/results-infant-feeding')
+  } else if (checkedValues3.includes('targeted-support')) {
+    res.redirect('/pre-mvp/results-targeted-support')
+  } else {
+    res.redirect('/pre-mvp/results')
+  }
+})
 
 
 // Add your routes here - above the module.exports line
