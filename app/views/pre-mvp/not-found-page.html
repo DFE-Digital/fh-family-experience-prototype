@@ -1,0 +1,39 @@
+{% extends "layout-pre-mvp.html" %}
+{% set mainClasses = "custom-main" %}
+{% set bodyClasses = "dfe-template__body" %}
+
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service, your <a href="#">feedback</a> will help us improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Page not found</h1>
+        <p class="govuk-body">
+          If you typed the web address, check it is correct.
+        </p>
+        <p class="govuk-body">
+          If you pasted the web address, check you copied the entire address.
+        </p>
+        <p class="govuk-body">
+          If the problem continues, email us at <a href="mailto:find-support-for-your-family.service@education.gov.uk" class="govuk-link">find-support-for-your-family.service@education.gov.uk</a>
+        </p>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
