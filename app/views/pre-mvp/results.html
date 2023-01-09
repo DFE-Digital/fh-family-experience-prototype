@@ -707,21 +707,12 @@
      
     </ul>
 
-    <ul class="govuk-list govuk-!-margin-top-6">
-      <!-- <li>
-        <a href="results-v3-youth-services" class="govuk-link">Youth services</a>
-      </li> -->
-      <li>
-        <a href="family-hub-results-bad-journey" class="govuk-link">Bad journey</a>
-      </li>
-      <li>
-        <a href="not-found-page" class="govuk-link">Not found page</a>
-      </li>
-    </ul>
+  
 
     {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
       {{ govukPagination({
+        classes: "govuk-!-margin-top-6",
         next: {
           href: "#"
         },
