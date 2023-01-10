@@ -21,22 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Category
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Parent, baby and toddler groups
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Cost
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £2 every session
-        </dd>
-      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Delivery method
@@ -45,14 +30,7 @@
           In person
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Age range
-        </dt>
-        <dd class="govuk-summary-list__value">
-          0 to 5
-        </dd>
-      </div>
+      
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Languages
@@ -75,6 +53,45 @@
     <p>Early Help Practitioners are based at your local hub and are there to support families. We use the evidence-based Salford Family Partnership Model to help you achieve positive outcomes.</p>
     <p>We offer advice on child health, managing behaviour, sleep issues, feeding and more. We work closely with other services and additional support can be offered with issues such as housing, finances, relationships and wellbeing.</p>
 
+
+    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Be Open On Breastfeeding in Salford"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "Child and Adolescent Mental Health Services (CAMHS)"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "Services and groups 3"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+          }
+        },
+        {
+          heading: {
+            text: "Services and groups 4"
+          },
+          content: {
+            html: "<p class='govuk-body'>This is the content for How people read.</p>"
+          }
+        }
+      ]
+    }) }}
   </div>
 
 
