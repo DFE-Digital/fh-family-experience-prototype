@@ -21,3 +21,4 @@ node_modules/
 /cypress/temp
 tmp/
 docs/assets/images/docs/backwards-compatibility-atom 2.png
+package-lock.json
